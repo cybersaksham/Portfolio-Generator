@@ -4,6 +4,7 @@
   "description": "This package generates a bootstrap based portfolio website for you.",
   "main": "index.js",
   "scripts": {
+    "portfolio-generator": "node tasks/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +25,6 @@
   },
   "homepage": "https://github.com/cybersaksham/Portfolio-Generator#readme",
   "bin": {
-    "portfolio-generator": "bin/index.js"
+    "portfolio-generator": "tasks/index.js"
   }
 }
