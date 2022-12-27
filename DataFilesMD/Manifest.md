@@ -11,7 +11,7 @@
 
 ## Code Structure
 
-```json
+```js
 {
   "author", // "cybersaksham"
   "short_name", // "Saksham Bindal"
