@@ -15,20 +15,6 @@
 - Degree
 ```
 
-## Data Structure
-
-```js
-Int birthYear;
-Int birthMonth;
-Int birthDate;
-String name;
-String about;
-String shortBio;
-String longBio;
-String city;
-String degree;
-```
-
 ## Code Structure
 
 ```js
@@ -39,7 +25,7 @@ let date = currDate.getDate() - birthDate;
 
 if (month < 0) year -= 1;
 else if (month === 0) {
-  if (date < 19) year -= 1;
+  if (date < birthDate) year -= 1;
 }
 
 const about = {

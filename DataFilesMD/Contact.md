@@ -13,18 +13,6 @@
 - Website URL
 ```
 
-## Data Structure
-
-```js
-String twitterLink;
-String instagramLink;
-String githubLink;
-String linkedinLink;
-String phone;
-String email;
-String website;
-```
-
 ## Code Structure
 
 ```js

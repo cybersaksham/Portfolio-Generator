@@ -18,23 +18,15 @@
 └── URL Types
 ```
 
-## Data Structure
-
-```js
-Array filters; // Eg: ["filter-game"]
-Object cat_types = {
-  filter_name: cat_name, // Eg: "filter-game": "Game"
-  ...
-};
-Array urls;
-Array projects;
-```
-
 ## Code Structure
 
 ```js
 // Filters
 // const game_filter = "filter-game";
+
+const filters = [
+  // game_filter
+];
 
 const generateFilterString = (...fils) => {
   return Array.from(fils).join(" ");
@@ -43,15 +35,20 @@ const generateFilterString = (...fils) => {
 // URL Types
 // const git = "Github";
 
+// Category Types
+const cat_types = {
+  // [game_filter]: "Game",
+};
+
 // Projects
 const projects = [
   {
-    name,
-    filter: generateFilterString(),
-    img,
+    name, // "Face Detector"
+    filter: generateFilterString(), // generateFilterString(game_filter, ai_filter)
+    img, // "face_detector"
     slides: 1,
     desc: [],
-    urls: [],
+    urls: [], // [[[git], "https://github.com/cybersaksham/Face-Detector"]]
   },
 ];
 

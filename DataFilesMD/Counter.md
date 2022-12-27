@@ -10,24 +10,15 @@
 - Title (Name of counter item)
 ```
 
-## Data Structure
-
-```js
-String iconClass; // Eg: bi bi-lightbulb-fill
-Int count; // Eg: 5
-Float duration; // Eg: 0.5
-String title; // Eg: "Years of Experience"
-```
-
 ## Code Structure
 
 ```js
 const counterItems = [
   {
-    icon: iconClass,
-    count: count,
-    duration: duration,
-    title: title,
+    icon: iconClass, // bi bi-lightbulb-fill
+    count: count, // 5
+    duration: duration, // 0.5
+    title: title, // "Years of Experience"
   },
   ...
 ];
