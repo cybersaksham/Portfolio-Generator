@@ -1,9 +1,6 @@
 #! /usr/bin/env node
 
-console.log("Welcome to Portfolio Generator!");
+import { Chalk } from "chalk";
 
-const args = process.argv.slice(2);
-if (args.length !== 1) {
-  console.error("Folder name not given");
-  process.exit(1);
-}
+const chalk = new Chalk();
+console.log(chalk.yellow("Welcome to Portfolio Generator!"));

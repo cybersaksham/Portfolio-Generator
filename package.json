@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This package generates a bootstrap based portfolio website for you.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "portfolio-generator": "node tasks/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/cybersaksham/Portfolio-Generator#readme",
   "bin": {
     "portfolio-generator": "tasks/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0"
   }
 }
