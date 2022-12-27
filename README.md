@@ -27,6 +27,7 @@
 │   ├── Portfolio.js
 │   ├── Resume.js
 │   └── Skills.js
+├── .gitignore
 ├── next.config.js
 ├── package.json
 ├── pages
@@ -146,7 +147,7 @@
 └── styles
     └── globals.css
 
-28 directories, 108 files
+28 directories, 107 files
 ```
 
 # Data Files
@@ -174,3 +175,69 @@
 
 4 directories, 12 files
 ```
+
+# After Generation
+
+## Create .env file
+
+- Create `.env` file at root level.
+- Generate OAuth client credentials for an email id at Google Developer Console.
+- Add these values in that file.
+- `FRONTEND_URL` is passed to enable cors features. It will allow backend requests only from given frontend.
+- All these values are necesary in order to enable contact form in website.
+- Adding this file is optional. If you don't add this file then people will not be able to contact you directly by your website.
+
+```bash
+# .env file
+FRONTEND_URL=<Url where frontend is hosted>
+MAIL_USERNAME=<Your email id>
+MAIL_PASSWORD=<Your email password>
+OAUTH_CLIENTID=<Generated OAuth Client ID>
+OAUTH_CLIENT_SECRET=<Generated OAuth Client Secret>
+OAUTH_REFRESH_TOKEN=<Generated OAuth Refresh Token>
+```
+
+## Run the Website (Development)
+
+```bash
+npm i
+npm run dev
+# Go to http://localhost:3000
+```
+
+## Run the Website (Build)
+
+```bash
+npm i
+npm run build
+npm run start
+# Go to http://localhost:3000
+```
+
+## Upload to Github
+
+```bash
+# Create repository at github and copy the link
+git init
+git remote add <paste link here>
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+## Deploy to Vercel
+
+- Go to https://vercel.com/dashboard & create account with github.
+- Import the repository in which you have uploaded code of website
+- Add environment variables as mentioned earlier in vercel also if you want to enable contact feature in website.
+- Deploy and done.
+
+# In Future
+
+These features may be added in future.
+
+- Service section
+- Different templates
+- Other custom features
+
+If you have any feature that may be added to the website then you can fork this repository, add that feature & create a pull request here.
