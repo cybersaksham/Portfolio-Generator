@@ -1,6 +1,6 @@
 # Portfolio Generator
 
-- This website generates a bootstrap based portfolio website for you.
+- This package generates a bootstrap based portfolio website for you.
 - Website will be using Next JS.
 - You can download final generated code & deploy on vercel.
 - View the template of generated website here https://bootstrapmade.com/demo/Personal/
