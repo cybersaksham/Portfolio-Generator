@@ -17,7 +17,7 @@
 
 ## Data Structure
 
-```java
+```js
 Int birthYear;
 Int birthMonth;
 Int birthDate;
