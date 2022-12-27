@@ -1,4 +1,5 @@
 # Portfolio Generator
+
 - This website generates a bootstrap based portfolio website for you.
 - Website will be using Next JS.
 - You can download final generated code & deploy on vercel.
@@ -6,7 +7,9 @@
 - View my website which is also built in same template https://www.cybersaksham.co.in/
 
 # Folder Structure
-This will be the folder structure after complete generation.
+
+- This will be the folder structure after complete generation.
+
 ```cmd
 ├── Components
 │   ├── About.js
@@ -144,4 +147,30 @@ This will be the folder structure after complete generation.
     └── globals.css
 
 28 directories, 108 files
+```
+
+# Data Files
+
+- These files contain data varying user to user.
+- User have to enter data corresponding to each file.
+
+```cmd
+├── Data
+│   ├── About.js
+│   ├── Contact.js
+│   ├── Counter.js
+│   ├── Portfolio.js
+│   ├── Resume.js
+│   └── Skills.js
+└── public
+    ├── favicon.ico
+    ├── Gallery
+    │   ├── 404.webp
+    │   ├── bg.webp
+    │   ├── pic.webp
+    │   └── Projects
+    ├── manifest.json
+    └── Resume.pdf
+
+4 directories, 12 files
 ```
