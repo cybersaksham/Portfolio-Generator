@@ -1,7 +1,7 @@
 {
-  "author": "cybersaksham",
-  "short_name": "Saksham Bindal",
-  "name": "Portfolio website of Saksham Bindal",
+  "author": "[[author]]",
+  "short_name": "[[shortName]]",
+  "name": "[[name]]",
   "icons": [
     {
       "src": "favicon.ico",

@@ -18,14 +18,14 @@ else if (month === 0) {
 }
 
 const about = {
-  name: [[name]],
-  about: [[about]],
-  bio: [[shortBio]],
-  longBio: [[longBio]],
+  name: "[[name]]",
+  about: "[[about]]",
+  bio: "[[shortBio]]",
+  longBio: "[[longBio]]",
   birthday,
-  city: [[city]],
+  city: "[[city]]",
   age: year,
-  degree: [[degree]],
+  degree: "[[degree]]",
 };
 
 export default about;
