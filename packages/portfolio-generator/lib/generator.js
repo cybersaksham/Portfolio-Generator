@@ -49,4 +49,24 @@ const checkAppName = (appName) => {
 
     process.exit(1);
   }
+
+  // TODO: fetch dependencies from package.json file to be added
+  const dependencies = ["react", "react-dom", "react-scripts"].sort();
+  if (dependencies.includes(appName)) {
+    let errors = [
+      `Cannot create a project named ${chalk.green(
+        `"${appName}"`
+      )} because a dependency with the same name exists.`,
+      `Due to the way npm works, the following names are not allowed:`,
+    ];
+    dependencies.map((dep) => {
+      errors.push(chalk.cyan(`  ${dep}`));
+    });
+    showError({
+      code: 400,
+      errors,
+      summary: ["Please choose a different project name."],
+    });
+    process.exit(1);
+  }
 };
