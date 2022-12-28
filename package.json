@@ -3,7 +3,6 @@
   "version": "3.0.1",
   "description": "This package generates a bootstrap based portfolio website for you.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "portfolio-generator": "node tasks/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

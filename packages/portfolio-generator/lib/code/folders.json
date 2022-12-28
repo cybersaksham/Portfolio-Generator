@@ -1,0 +1,32 @@
+{
+  "folders": [
+    "/Components",
+    "/Data",
+    "/pages",
+    "/pages/api",
+    "/pages/detail",
+    "/public",
+    "/public/Gallery",
+    "/public/Gallery/Projects",
+    "/public/assets",
+    "/public/assets/js",
+    "/public/assets/vendor",
+    "/public/assets/vendor/bootstrap",
+    "/public/assets/vendor/bootstrap/css",
+    "/public/assets/vendor/bootstrap/js",
+    "/public/assets/vendor/bootstrap-icons",
+    "/public/assets/vendor/bootstrap-icons/fonts",
+    "/public/assets/vendor/boxicons",
+    "/public/assets/vendor/boxicons/css",
+    "/public/assets/vendor/boxicons/fonts",
+    "/public/assets/vendor/glightbox",
+    "/public/assets/vendor/glightbox/css",
+    "/public/assets/vendor/glightbox/js",
+    "/public/assets/vendor/isotope-layout",
+    "/public/assets/vendor/purecounter",
+    "/public/assets/vendor/remixicon",
+    "/public/assets/vendor/swiper",
+    "/public/assets/vendor/waypoints",
+    "/styles"
+  ]
+}

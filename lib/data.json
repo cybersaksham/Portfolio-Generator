@@ -1,0 +1,33 @@
+{
+  "folders": [
+    "../Required Code",
+    "../Required Code/Components",
+    "../Required Code/Data",
+    "../Required Code/pages",
+    "../Required Code/pages/api",
+    "../Required Code/pages/detail",
+    "../Required Code/public",
+    "../Required Code/public/Gallery",
+    "../Required Code/public/Gallery/Projects",
+    "../Required Code/public/assets",
+    "../Required Code/public/assets/js",
+    "../Required Code/public/assets/vendor",
+    "../Required Code/public/assets/vendor/bootstrap",
+    "../Required Code/public/assets/vendor/bootstrap/css",
+    "../Required Code/public/assets/vendor/bootstrap/js",
+    "../Required Code/public/assets/vendor/bootstrap-icons",
+    "../Required Code/public/assets/vendor/bootstrap-icons/fonts",
+    "../Required Code/public/assets/vendor/boxicons",
+    "../Required Code/public/assets/vendor/boxicons/css",
+    "../Required Code/public/assets/vendor/boxicons/fonts",
+    "../Required Code/public/assets/vendor/glightbox",
+    "../Required Code/public/assets/vendor/glightbox/css",
+    "../Required Code/public/assets/vendor/glightbox/js",
+    "../Required Code/public/assets/vendor/isotope-layout",
+    "../Required Code/public/assets/vendor/purecounter",
+    "../Required Code/public/assets/vendor/remixicon",
+    "../Required Code/public/assets/vendor/swiper",
+    "../Required Code/public/assets/vendor/waypoints",
+    "../Required Code/styles"
+  ]
+}
