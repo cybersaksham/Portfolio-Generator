@@ -1,4 +1,13 @@
-# Portfolio Generator
+# portfolio-generator
+
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![Size][size-image]][npm-url] [![License][license-image]][npm-url]
+
+[npm-url]: https://www.npmjs.com/package/portfolio-generator
+[downloads-image]: http://img.shields.io/npm/dm/portfolio-generator.svg?style=for-the-badge
+[npm-image]: http://img.shields.io/npm/v/portfolio-generator.svg?style=for-the-badge
+[size-image]: http://img.shields.io/bundlephobia/min/portfolio-generator.svg?style=for-the-badge
+[license-image]: http://img.shields.io/npm/l/portfolio-generator.svg?style=for-the-badge
 
 - This package generates a bootstrap based portfolio website for you.
 - Website will be using Next JS.
