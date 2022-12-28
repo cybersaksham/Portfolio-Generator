@@ -8,7 +8,7 @@ const { program } = require("commander");
 const chalk = require("chalk");
 const packageJson = require("./package.json");
 const { helpFunction, infoFunction } = require("./lib/program");
-const { checkNodeVersion } = require("./lib/versions");
+const { checkNodeVersion, checkForLatestVersion } = require("./lib/versions");
 
 const init = () => {
   let projectName;
@@ -68,7 +68,7 @@ const init = () => {
   // This is important for users in environments where direct access to npm is
   // blocked by a firewall, and packages are provided exclusively via a private
   // registry.
-  checkForLatestVersion()
+  checkForLatestVersion(packageJson.name)
     .catch(() => {
       try {
         return execSync(`npm view ${packageJson.name} version`)
@@ -98,28 +98,5 @@ const init = () => {
       }
     });
 };
-
-function checkForLatestVersion() {
-  return new Promise((resolve, reject) => {
-    https
-      .get(
-        `https://registry.npmjs.org/-/package/${packageJson.name}/dist-tag`,
-        (res) => {
-          if (res.statusCode === 200) {
-            let body = "";
-            res.on("data", (data) => (body += data));
-            res.on("end", () => {
-              resolve(JSON.parse(body).latest);
-            });
-          } else {
-            reject();
-          }
-        }
-      )
-      .on("error", () => {
-        reject();
-      });
-  });
-}
 
 module.exports = { init };
