@@ -4,7 +4,6 @@ const { checkNodeVersion } = require("./versions");
 const os = require("os");
 const path = require("path");
 const fs = require("fs-extra");
-var hyperquest = require("hyperquest");
 const chalk = require("chalk");
 
 // Code Imports
