@@ -1,12 +1,11 @@
 const contact_links = {
-  twitter: "https://twitter.com/cybersaksham",
-  instagram: "https://www.instagram.com/saksham.1908",
-  github: "https://github.com/cybersaksham",
-  linkedin: "https://www.linkedin.com/in/cybersaksham/",
-  // phone: "+91 9351303570",
-  phone: "+91 **********",
-  email: "saksham.bindal2004@gmail.com",
-  website: "https://www.cybersaksham.co.in",
+  twitter: [[twitterLink]],
+  instagram: [[instagramLink]],
+  github: [[githubLink]],
+  linkedin: [[linkedinLink]],
+  phone: [[phone]],
+  email: [[email]],
+  website: [[website]],
 };
 
 export default contact_links;
