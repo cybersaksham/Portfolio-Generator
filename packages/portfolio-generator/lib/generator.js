@@ -1,14 +1,12 @@
 const { showWarning, showError } = require("cybersaksham-npm-logs");
 const validateProjectName = require("validate-npm-package-name");
 const { checkNodeVersion } = require("./versions");
-const os = require("os");
 const path = require("path");
 const fs = require("fs-extra");
 const chalk = require("chalk");
 
 // Code Imports
 const folders = require("./code/folders.json");
-let codePackageJson = require("./code/package.json");
 
 module.exports.createApp = (name, version) => {
   if (!checkNodeVersion()) {
@@ -172,14 +170,4 @@ const writePackageJson = (root, name) => {
   folders.folders.forEach((dir) => {
     fs.ensureDirSync(path.join(root, dir));
   });
-
-  // codePackageJson.name = name;
-  // fs.writeFileSync(
-  //   path.join(root, "package.json"),
-  //   JSON.stringify(codePackageJson, null, 2) + os.EOL
-  // );
-
-  // //   var file_url =
-  // //     "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/README.md?token=GHSAT0AAAAAAB3B3WDUAXCAFM52ZQWLEPHIY5MEN7Q";
-  // var out = fs.createWriteStream(path.join(root, "README.md"));
 };
