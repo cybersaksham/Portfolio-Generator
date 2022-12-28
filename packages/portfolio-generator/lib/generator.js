@@ -12,7 +12,7 @@ const chalk = require("chalk");
 // Code Imports
 const structure = require("./code/structure.json");
 
-module.exports.createApp = (name, version) => {
+module.exports.createApp = async (name, version) => {
   if (!checkNodeVersion()) {
     showWarning({
       warnings: [
@@ -38,7 +38,7 @@ module.exports.createApp = (name, version) => {
   console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
   console.log();
 
-  downloadFiles(root);
+  await downloadFiles(root);
 };
 
 const checkAppName = (appName) => {
@@ -169,8 +169,9 @@ const isSafeToCreateProjectIn = (root, name) => {
   });
 };
 
-// Write package.json file
-const downloadFiles = (root) => {
+// Download files from the github repository
+// https://github.com/cybersaksham/Portfolio-Generator/tree/master/Required%20Code
+const downloadFiles = async (root) => {
   structure.folders.forEach((dir) => {
     fs.ensureDirSync(path.join(root, dir));
   });
@@ -183,5 +184,5 @@ const downloadFiles = (root) => {
     });
   });
 
-  showMultipleProgress(fileList);
+  await showMultipleProgress(fileList);
 };

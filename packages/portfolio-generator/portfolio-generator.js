@@ -10,7 +10,7 @@ const { helpFunction, infoFunction } = require("./lib/program");
 const { checkForLatestVersion } = require("./lib/versions");
 const { createApp } = require("./lib/generator");
 
-const init = () => {
+module.exports.init = async () => {
   let projectName;
 
   program
@@ -68,36 +68,34 @@ const init = () => {
   // This is important for users in environments where direct access to npm is
   // blocked by a firewall, and packages are provided exclusively via a private
   // registry.
-  checkForLatestVersion(packageJson.name)
-    .catch(() => {
-      try {
-        return execSync(`npm view ${packageJson.name} version`)
-          .toString()
-          .trim();
-      } catch (e) {
-        return null;
-      }
-    })
-    .then((latest) => {
-      if (latest && semver.lt(packageJson.version, latest)) {
-        showWarning({
-          warnings: [
-            `You are running \`${packageJson.name}\` ${packageJson.version}, which is behind the latest release (${latest}).`,
-            "",
-            `We recommend always using the latest version of ${packageJson.name} if possible.`,
-          ],
-          summary: [
-            "The latest instructions for creating a new app can be found here:",
-            chalk.cyan(
-              "https://portfolio-generator.cybersaksham.co.in/docs/getting-started/"
-            ),
-          ],
-        });
-        process.exit(1);
-      } else {
-        createApp(projectName, options.scriptsVersion);
-      }
-    });
-};
+  let latest;
+  try {
+    latest = await checkForLatestVersion(packageJson.name);
+  } catch (e) {
+    try {
+      return execSync(`npm view ${packageJson.name} version`).toString().trim();
+    } catch (e) {
+      console.error("Unknown error occurred");
+      process.exit(1);
+    }
+  }
 
-module.exports = { init };
+  if (latest && semver.lt(packageJson.version, latest)) {
+    showWarning({
+      warnings: [
+        `You are running \`${packageJson.name}\` ${packageJson.version}, which is behind the latest release (${latest}).`,
+        "",
+        `We recommend always using the latest version of ${packageJson.name} if possible.`,
+      ],
+      summary: [
+        "The latest instructions for creating a new app can be found here:",
+        chalk.cyan(
+          "https://portfolio-generator.cybersaksham.co.in/docs/getting-started/"
+        ),
+      ],
+    });
+    process.exit(1);
+  } else {
+    await createApp(projectName, options.scriptsVersion);
+  }
+};
