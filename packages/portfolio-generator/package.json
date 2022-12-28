@@ -32,6 +32,8 @@
     "portfolio-generator": "./index.js"
   },
   "dependencies": {
-    "cybersaksham-npm-logs": "^2.0.0"
+    "commander": "^9.4.1",
+    "cybersaksham-npm-logs": "^2.0.0",
+    "envinfo": "^7.8.1"
   }
 }
