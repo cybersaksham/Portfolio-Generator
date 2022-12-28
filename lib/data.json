@@ -29,5 +29,423 @@
     "../Required Code/public/assets/vendor/swiper",
     "../Required Code/public/assets/vendor/waypoints",
     "../Required Code/styles"
+  ],
+  "files": [
+    {
+      "name": "../Required Code/.eslintrc.json",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/.eslintrc.json"
+    },
+    {
+      "name": "../Required Code/.gitignore",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/.gitignore"
+    },
+    {
+      "name": "../Required Code/Components/About.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/About.js"
+    },
+    {
+      "name": "../Required Code/Components/Contact.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Contact.js"
+    },
+    {
+      "name": "../Required Code/Components/Detail.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Detail.js"
+    },
+    {
+      "name": "../Required Code/Components/Header.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Header.js"
+    },
+    {
+      "name": "../Required Code/Components/Portfolio.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Portfolio.js"
+    },
+    {
+      "name": "../Required Code/Components/Resume.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Resume.js"
+    },
+    {
+      "name": "../Required Code/Components/Service.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/Service.js"
+    },
+    {
+      "name": "../Required Code/Components/ValidImage.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Components/ValidImage.js"
+    },
+    {
+      "name": "../Required Code/Data/About.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/About.js"
+    },
+    {
+      "name": "../Required Code/Data/Contact.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/Contact.js"
+    },
+    {
+      "name": "../Required Code/Data/Counter.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/Counter.js"
+    },
+    {
+      "name": "../Required Code/Data/Portfolio.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/Portfolio.js"
+    },
+    {
+      "name": "../Required Code/Data/Resume.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/Resume.js"
+    },
+    {
+      "name": "../Required Code/Data/Skills.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/Data/Skills.js"
+    },
+    {
+      "name": "../Required Code/README.md",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/README.md"
+    },
+    {
+      "name": "../Required Code/next.config.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/next.config.js"
+    },
+    {
+      "name": "../Required Code/package.json",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/package.json"
+    },
+    {
+      "name": "../Required Code/pages/_app.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/pages/_app.js"
+    },
+    {
+      "name": "../Required Code/pages/_document.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/pages/_document.js"
+    },
+    {
+      "name": "../Required Code/pages/api/sendMail.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/pages/api/sendMail.js"
+    },
+    {
+      "name": "../Required Code/pages/detail/[id].js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/pages/detail/[id].js"
+    },
+    {
+      "name": "../Required Code/pages/index.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/pages/index.js"
+    },
+    {
+      "name": "../Required Code/public/assets/js/main.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/js/main.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap/js/bootstrap.min.js.map",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap/js/bootstrap.min.js.map"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap-icons/bootstrap-icons.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap-icons/bootstrap-icons.json",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap-icons/bootstrap-icons.json"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/bootstrap-icons/index.html",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/bootstrap-icons/index.html"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/css/animations.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/css/animations.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/css/boxicons.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/css/boxicons.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/css/boxicons.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/css/boxicons.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/css/transformations.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/css/transformations.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/fonts/boxicons.eot",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/fonts/boxicons.eot"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/fonts/boxicons.svg",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/fonts/boxicons.svg"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/fonts/boxicons.ttf",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/fonts/boxicons.ttf"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/fonts/boxicons.woff",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/fonts/boxicons.woff"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/boxicons/fonts/boxicons.woff2",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/boxicons/fonts/boxicons.woff2"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/glightbox/css/glightbox.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/glightbox/css/glightbox.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/glightbox/css/glightbox.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/glightbox/css/glightbox.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/glightbox/js/glightbox.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/glightbox/js/glightbox.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/glightbox/js/glightbox.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/glightbox/js/glightbox.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/isotope-layout/isotope.pkgd.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/isotope-layout/isotope.pkgd.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/isotope-layout/isotope.pkgd.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/isotope-layout/isotope.pkgd.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/purecounter/purecounter.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/purecounter/purecounter.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.eot",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.eot"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.less",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.less"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.svg",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.svg"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.symbol.svg",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.symbol.svg"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.ttf",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.ttf"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.woff",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.woff"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/remixicon/remixicon.woff2",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/remixicon/remixicon.woff2"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/swiper/swiper-bundle.min.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/swiper/swiper-bundle.min.css"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/swiper/swiper-bundle.min.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/swiper/swiper-bundle.min.js"
+    },
+    {
+      "name": "../Required Code/public/assets/vendor/waypoints/noframework.waypoints.js",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/assets/vendor/waypoints/noframework.waypoints.js"
+    },
+    {
+      "name": "../Required Code/public/favicon.ico",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/favicon.ico"
+    },
+    {
+      "name": "../Required Code/public/manifest.json",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/public/manifest.json"
+    },
+    {
+      "name": "../Required Code/styles/globals.css",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/../Required Code/styles/globals.css"
+    }
   ]
 }

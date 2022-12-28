@@ -1,4 +1,8 @@
-const { showWarning, showError } = require("cybersaksham-npm-logs");
+const {
+  showWarning,
+  showError,
+  showMultipleProgress,
+} = require("cybersaksham-npm-logs");
 const validateProjectName = require("validate-npm-package-name");
 const { checkNodeVersion } = require("./versions");
 const path = require("path");
@@ -6,7 +10,7 @@ const fs = require("fs-extra");
 const chalk = require("chalk");
 
 // Code Imports
-const folders = require("./code/folders.json");
+const structure = require("./code/structure.json");
 
 module.exports.createApp = (name, version) => {
   if (!checkNodeVersion()) {
@@ -34,7 +38,7 @@ module.exports.createApp = (name, version) => {
   console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
   console.log();
 
-  writePackageJson(root, name);
+  downloadFiles(root);
 };
 
 const checkAppName = (appName) => {
@@ -166,8 +170,18 @@ const isSafeToCreateProjectIn = (root, name) => {
 };
 
 // Write package.json file
-const writePackageJson = (root, name) => {
-  folders.folders.forEach((dir) => {
+const downloadFiles = (root) => {
+  structure.folders.forEach((dir) => {
     fs.ensureDirSync(path.join(root, dir));
   });
+
+  const fileList = [];
+  structure.files.forEach(({ name, source }) => {
+    fileList.push({
+      source,
+      destination: path.join(root, name),
+    });
+  });
+
+  showMultipleProgress(fileList);
 };
