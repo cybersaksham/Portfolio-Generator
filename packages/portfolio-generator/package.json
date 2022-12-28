@@ -1,6 +1,6 @@
 {
   "name": "portfolio-generator",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "author": "cybersaksham",
   "license": "MIT",
   "description": "This package generates a bootstrap based portfolio website for you.",
