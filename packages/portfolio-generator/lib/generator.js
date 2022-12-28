@@ -1,9 +1,14 @@
 const { showWarning, showError } = require("cybersaksham-npm-logs");
 const validateProjectName = require("validate-npm-package-name");
 const { checkNodeVersion } = require("./versions");
+const os = require("os");
 const path = require("path");
 const fs = require("fs-extra");
+var hyperquest = require("hyperquest");
 const chalk = require("chalk");
+
+// Code Imports
+let codePackageJson = require("./code/package.json");
 
 module.exports.createApp = (name, version) => {
   if (!checkNodeVersion()) {
@@ -25,6 +30,13 @@ module.exports.createApp = (name, version) => {
   // Checking directory
   fs.ensureDirSync(name);
   isSafeToCreateProjectIn(root, name);
+
+  // Start creating the project
+  console.log();
+  console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
+  console.log();
+
+  writePackageJson(root, name);
 };
 
 const checkAppName = (appName) => {
@@ -153,4 +165,17 @@ const isSafeToCreateProjectIn = (root, name) => {
       fs.removeSync(path.join(root, file));
     }
   });
+};
+
+// Write package.json file
+const writePackageJson = (root, name) => {
+  codePackageJson.name = name;
+  fs.writeFileSync(
+    path.join(root, "package.json"),
+    JSON.stringify(codePackageJson, null, 2) + os.EOL
+  );
+
+  //   var file_url =
+  //     "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/README.md?token=GHSAT0AAAAAAB3B3WDUAXCAFM52ZQWLEPHIY5MEN7Q";
+  var out = fs.createWriteStream(path.join(root, "README.md"));
 };
