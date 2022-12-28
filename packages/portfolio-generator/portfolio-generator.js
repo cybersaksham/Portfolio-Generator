@@ -1,6 +1,5 @@
 "use strict";
 
-const https = require("https");
 const semver = require("semver");
 const { execSync } = require("child_process");
 const { showError, showWarning } = require("cybersaksham-npm-logs");
@@ -8,7 +7,8 @@ const { program } = require("commander");
 const chalk = require("chalk");
 const packageJson = require("./package.json");
 const { helpFunction, infoFunction } = require("./lib/program");
-const { checkNodeVersion, checkForLatestVersion } = require("./lib/versions");
+const { checkForLatestVersion } = require("./lib/versions");
+const { createApp } = require("./lib/generator");
 
 const init = () => {
   let projectName;
@@ -95,6 +95,7 @@ const init = () => {
         });
         process.exit(1);
       } else {
+        createApp(projectName, options.scriptsVersion);
       }
     });
 };
