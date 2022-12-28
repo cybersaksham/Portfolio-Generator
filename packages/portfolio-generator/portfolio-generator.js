@@ -6,8 +6,9 @@ const { execSync } = require("child_process");
 const { showError, showWarning } = require("cybersaksham-npm-logs");
 const { program } = require("commander");
 const chalk = require("chalk");
-const envinfo = require("envinfo");
 const packageJson = require("./package.json");
+const { helpFunction, infoFunction } = require("./lib/program");
+const { checkNodeVersion } = require("./lib/versions");
 
 const init = () => {
   let projectName;
@@ -22,52 +23,19 @@ const init = () => {
       projectName = name;
     })
     .option("--info", "print environment debug info")
+    .option(
+      "--scripts-version <alternative-package>",
+      "use a non-standard version of react-scripts"
+    )
     .allowUnknownOption()
-    .on("--help", () => {
-      console.log();
-      console.log(
-        `    Only ${chalk.green("[project-directory]")} is required.`
-      );
-      console.log();
-      console.log(
-        `    If you have any problems, do not hesitate to file an issue:`
-      );
-      console.log(`      ${chalk.cyan(packageJson.bugs.url)}`);
-      console.log();
-    })
+    .on("--help", helpFunction)
     .parse(process.argv);
 
   const options = program.opts();
 
   // Environment information
   if (options.info) {
-    console.log(chalk.green("\nEnvironment Info:"));
-    console.log(
-      `\n  current version of ${packageJson.name}: ${packageJson.version}`
-    );
-    console.log(`  running from ${chalk.cyan(__dirname)}`);
-    return envinfo
-      .run(
-        {
-          System: ["OS", "CPU", "Memory", "Shell"],
-          Binaries: ["Node", "npm", "Yarn"],
-          Browsers: [
-            "Chrome",
-            "Firefox",
-            "Opera",
-            "Edge",
-            "Internet Explorer",
-            "Safari",
-          ],
-          npmPackages: ["react", "react-dom", "react-scripts"],
-          npmGlobalPackages: [packageJson.name],
-        },
-        {
-          duplicates: true,
-          showNotFound: true,
-        }
-      )
-      .then(console.log);
+    return infoFunction();
   }
 
   // If project directory is not given
