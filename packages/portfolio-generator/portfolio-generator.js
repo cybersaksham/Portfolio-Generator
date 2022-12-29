@@ -18,10 +18,11 @@ module.exports.init = async () => {
     .version(packageJson.version)
     .description(packageJson.description)
     .argument("[project-directory]")
-    .usage(`${chalk.green("[project-directory]")} [options]`)
+    .usage(`${chalk.green("<project-directory>")} [options]`)
     .action((name) => {
       projectName = name;
     })
+    .option("--dummy", "make a dummy portfolio website")
     .option("--info", "print environment debug info")
     .option(
       "--scripts-version <alternative-package>",
@@ -44,7 +45,7 @@ module.exports.init = async () => {
       code: 400,
       errors: [
         "Please specify the project directory:",
-        `  ${chalk.cyan(program.name())} ${chalk.green("[project-directory]")}`,
+        `  ${chalk.cyan(program.name())} ${chalk.green("<project-directory>")}`,
         "",
         "For example:",
         `  ${chalk.cyan(program.name())} ${chalk.green("my-portfolio")}`,
@@ -96,6 +97,6 @@ module.exports.init = async () => {
     });
     process.exit(1);
   } else {
-    await createApp(projectName, options.scriptsVersion);
+    await createApp(projectName, options.scriptsVersion, options.dummy);
   }
 };

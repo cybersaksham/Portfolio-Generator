@@ -5,7 +5,30 @@ const packageJson = require("../package.json");
 module.exports.helpFunction = () => {
   // Project Directory
   console.log();
-  console.log(`    Only ${chalk.green("[project-directory]")} is required.`);
+  console.log(`    Only ${chalk.green("<project-directory>")} is required.`);
+
+  // --dummy
+  console.log();
+  console.log(
+    `    Pass the option ${chalk.cyan(
+      "--dummy"
+    )} to make a dummy portfolio website`
+  );
+  console.log(
+    `      - The website will look like ${chalk.cyan(
+      "https://www.cybersaksham.co.in/"
+    )}`
+  );
+  console.log(
+    `      - The generated data will be personal data of ${chalk.green(
+      "Saksham Bindal (cybersaksham)"
+    )}`
+  );
+  console.log(
+    `      - You can also watch his website on ${chalk.cyan(
+      "https://github.com/cybersaksham/Portfolio-Website-NextJS"
+    )}`
+  );
 
   // --scripts-version
   console.log();

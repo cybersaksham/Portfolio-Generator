@@ -13,7 +13,7 @@ const chalk = require("chalk");
 const structure = require("./code/structure.json");
 const { aboutQuestions, contactQuestions } = require("./code/questions");
 
-module.exports.createApp = async (name, version) => {
+module.exports.createApp = async (name, version, dummy = false) => {
   // if (!checkNodeVersion()) {
   //   showWarning({
   //     warnings: [
@@ -40,7 +40,7 @@ module.exports.createApp = async (name, version) => {
   // console.log();
 
   // await downloadFiles(root);
-  await addData();
+  await addData(dummy);
 };
 
 const checkAppName = (appName) => {
@@ -191,10 +191,10 @@ const downloadFiles = async (root) => {
 
 // Add Data to files
 // Ask data from user and add to files
-const addData = async () => {
-  // const aboutData = await aboutQuestions();
-  // console.log(aboutData);
+const addData = async (dummy = false) => {
+  const aboutData = await aboutQuestions(dummy);
+  console.log(aboutData);
 
-  const contactData = await contactQuestions();
+  const contactData = await contactQuestions(dummy);
   console.log(contactData);
 };
