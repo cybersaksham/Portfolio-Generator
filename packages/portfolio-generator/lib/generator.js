@@ -202,6 +202,7 @@ const downloadFiles = async (root) => {
 // Add Data to files
 // Ask data from user and add to files
 const addData = async (root, dummy = false) => {
+  insertPackageJson(root);
   await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
   await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
   await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
@@ -236,9 +237,7 @@ const addData = async (root, dummy = false) => {
 const insertData = async (filepath, questions, dummy) => {
   const data = await questions(dummy);
   let file = fs.readFileSync(filepath).toString();
-  console.log(filepath);
   for (const key in data) {
-    console.log(key);
     let replacableData = data[key];
     if (typeof replacableData === "object") {
       replacableData = JSON.stringify(replacableData);
@@ -261,4 +260,13 @@ const insertImages = async (filepath, dummy, message = "") => {
     let file = fs.readFileSync(image);
     fs.writeFileSync(filepath, file);
   }
+};
+
+// Insert package.json
+// Change package name in package.json file
+const insertPackageJson = (root) => {
+  let filepath = path.join(root, "package.json");
+  let file = fs.readFileSync(filepath).toString();
+  file = file.replaceAll("[[name]]", path.basename(root).toString());
+  fs.writeFileSync(filepath, file);
 };
