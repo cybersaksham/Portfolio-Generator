@@ -979,3 +979,43 @@ module.exports.resumeQuestions = async (dummy = false) => {
 
   return resumeData;
 };
+
+module.exports.manifestQuestions = async (dummy = false) => {
+  if (dummy) {
+    prompts.inject([
+      "cybersaksham",
+      "Saksham Bindal",
+      "Portfolio website of Saksham Bindal",
+    ]);
+  }
+
+  // manifest.json
+  const manifestData = await prompts(
+    [
+      {
+        type: "text",
+        name: "author",
+        message: "Author name/username?",
+        format: trimmer,
+        validate: emptyValidator,
+      },
+      {
+        type: "text",
+        name: "shortName",
+        message: "Short name for website?",
+        format: trimmer,
+        validate: (val) => minmaxChecker(val, 5, 30),
+      },
+      {
+        type: "text",
+        name: "name",
+        message: "Long name for website?",
+        format: trimmer,
+        validate: (val) => minmaxChecker(val, 10, 100),
+      },
+    ],
+    { onCancel }
+  );
+
+  return manifestData;
+};
