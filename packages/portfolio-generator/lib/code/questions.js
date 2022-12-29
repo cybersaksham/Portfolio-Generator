@@ -163,15 +163,7 @@ module.exports.aboutQuestions = async (dummy = false) => {
 
 module.exports.contactQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      "https://twitter.com/cybersaksham",
-      "https://www.instagram.com/saksham.1908",
-      "https://github.com/cybersaksham",
-      "https://www.linkedin.com/in/cybersaksham/",
-      "+91 **********",
-      "saksham.bindal2004@gmail.com",
-      "https://www.cybersaksham.co.in",
-    ]);
+    prompts.inject(dummyData.contactData);
   }
 
   // Contact.js Data
@@ -235,25 +227,7 @@ module.exports.contactQuestions = async (dummy = false) => {
 
 module.exports.counterQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      4,
-      "bi bi-globe",
-      50,
-      1,
-      "Websites",
-      "bi bi-phone",
-      10,
-      1,
-      "Android Apps",
-      "bi bi-currency-bitcoin",
-      3,
-      1,
-      "Web 3.0 Apps",
-      "bi bi-lightbulb-fill",
-      "2",
-      1,
-      "Years of Experience",
-    ]);
+    prompts.inject(dummyData.counterData);
   }
   // Counter.js Data
   const { itemsCount } = await prompts(
@@ -309,59 +283,7 @@ module.exports.counterQuestions = async (dummy = false) => {
 
 module.exports.portfolioQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      6,
-      "game_filter",
-      "game",
-      "web_filter",
-      "web",
-      "desktop_filter",
-      "desktop",
-      "ai_filter",
-      "ai",
-      "android_filter",
-      "android",
-      "blockchain_filter",
-      "blockchain",
-      4,
-      "git",
-      "Github",
-      "playstore",
-      "Playstore",
-      "setup",
-      "Setup",
-      "web",
-      "Website",
-      "Game",
-      "Website",
-      "Desktop App",
-      "Artificial Intelligence",
-      "Android App",
-      "Blockchain",
-      2,
-      "Face Detector",
-      ["ai_filter", "desktop_filter"],
-      "face_detector",
-      [
-        "It is an AI project to detect your face & eyes either by live webcam, uploaded photo or video.",
-        "Made in python using OpenCV.",
-      ],
-      2,
-      "git",
-      "https://github.com/cybersaksham/Face-Detector",
-      "setup",
-      "https://github.com/cybersaksham/Face-Detector/raw/master/setup_face_detector.exe",
-      "INC",
-      ["web_filter", "blockchain_filter"],
-      "inc",
-      [
-        "INC(Indian National Coin) is a demo crypto-currency made in motoko.",
-        "You can view, transfer & receive INC coins on this website",
-      ],
-      1,
-      "git",
-      "https://github.com/cybersaksham/INC",
-    ]);
+    prompts.inject(dummyData.portfolioData);
   }
 
   // Portfolio.js Data
@@ -588,37 +510,7 @@ module.exports.portfolioQuestions = async (dummy = false) => {
 
 module.exports.skillsQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      14,
-      "Python",
-      95,
-      "React",
-      95,
-      "Next",
-      90,
-      "Flask",
-      92,
-      "HTML",
-      85,
-      "Blockchain",
-      80,
-      "Bootstrap",
-      80,
-      "Javascript",
-      80,
-      "C++",
-      80,
-      "Flutter",
-      80,
-      "C",
-      75,
-      "Java",
-      75,
-      "Machine Learning",
-      70,
-      "Artificial Intelligence",
-      70,
-    ]);
+    prompts.inject(dummyData.skillData);
   }
 
   // Skill.js
@@ -665,99 +557,7 @@ module.exports.skillsQuestions = async (dummy = false) => {
 
 module.exports.resumeQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      3,
-      "B.Tech Computer Science",
-      "2020 - present",
-      "Malaviya National Institute of Technology, Rajasthan, India",
-      "CGPA: 8.57",
-      "Senior Secondary (XII)",
-      "2019 - 20",
-      "Nirmal Happy Sr. Sec. School, Hindaun, Rajasthan, India",
-      "Percentage: 91.20",
-      "Secondary (X)",
-      "2017 - 18",
-      "DS Science Academy, Gangapur, Rajasthan, India",
-      "Percentage: 96.00",
-      3,
-      "JEE Mains",
-      "AIR: 5126",
-      "JEE Advanced",
-      "AIR: 3086",
-      "KVPY",
-      "AIR: 1403",
-      4,
-      "Languages",
-      [
-        "Java",
-        "Python",
-        "C",
-        "CPP",
-        "Motoko",
-        "Javascript",
-        "Dart",
-        "Scheme",
-        "Assmebly",
-      ],
-      "Platforms",
-      [
-        "Unix",
-        "Git",
-        "Android Studio",
-        "Flutter",
-        "AWS",
-        "Firebase",
-        "Vercel",
-        "Postmam",
-        "Playstore",
-      ],
-      "Frameworks",
-      ["React JS", "Next JS", "Flask", "Node JS"],
-      "Databases",
-      ["MongoDB", "MySql", "SQLAlchemy", "Firestore", "Airtable"],
-      5,
-      "Software Engineer Intern",
-      "Atlassian",
-      "In summer 2023",
-      "Remote + Bangalore",
-      0,
-      0,
-      "Maths Expert",
-      "Chegg Inc.",
-      "Nov 2022 - Present",
-      "Remote",
-      2,
-      "Basic maths expert at Chegg Inc.",
-      "Solve math questions daily.",
-      0,
-      "Flutter App Developer",
-      "Urban Culture",
-      "Apr 2022 - May 2022",
-      "Remote",
-      3,
-      "Leader of website team at Urban Culture.",
-      "Developed Rest APIs.",
-      "Worked on client android app & admin panel in flutter.",
-      0,
-      "Web Developer",
-      "YouthFest MNIT Jaipur",
-      "Dec 2021 - Jan 2022",
-      "Remote",
-      3,
-      "Created a website for MNIT YouthFest 2022",
-      "Leader of team of 6 people",
-      "Frontend in React JS & Backend in Node JS, MongoDB",
-      1,
-      "https://www.mnityouthfest.in/",
-      "Web Developer & Incharge",
-      "Think India MNIT",
-      "Nov 2021 - Oct 2022",
-      "Jaipur, IN",
-      2,
-      "Incharge of Coding team at Think India MNIT.",
-      "We work on different projects like app development, web development.",
-      0,
-    ]);
+    prompts.inject(dummyData.resumeData);
   }
 
   // Resume.js
@@ -992,11 +792,7 @@ module.exports.resumeQuestions = async (dummy = false) => {
 
 module.exports.manifestQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      "cybersaksham",
-      "Saksham Bindal",
-      "Portfolio website of Saksham Bindal",
-    ]);
+    prompts.inject(dummyData.manifestData);
   }
 
   // manifest.json
