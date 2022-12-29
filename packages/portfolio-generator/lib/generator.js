@@ -51,6 +51,9 @@ module.exports.createApp = async (name, version, dummy = false) => {
   console.log();
 
   await downloadFiles(root);
+
+  console.log();
+  console.log();
   await addData(root, dummy);
 };
 
@@ -197,7 +200,7 @@ const downloadFiles = async (root) => {
     });
   });
 
-  await showMultipleProgress(fileList, 1);
+  await showMultipleProgress(fileList);
 };
 
 // Add Data to files
@@ -240,6 +243,7 @@ const insertData = async (filepath, questions, dummy) => {
   let file = fs.readFileSync(filepath).toString();
   for (const key in data) {
     let replacableData = data[key];
+    console.log(replacableData);
     if (typeof replacableData === "object") {
       replacableData = JSON.stringify(replacableData);
     }

@@ -58,7 +58,7 @@ const onCancel = (prompt) => {
     code: 400,
     errors: [
       "Interactive input is interuppted by user.",
-      "The data will not be saved. You have lost the generated data.",
+      "The data was not saved. You have lost the generated data.",
       `Run ${chalk.green(
         "npx portfolio-generator"
       )} again to re-generate data.`,
@@ -104,6 +104,7 @@ module.exports.aboutQuestions = async (dummy = false) => {
         name: "about",
         message: "Your professions seperated by ','?",
         initial: "Full-Stack Developer, Designer",
+        format: (val) => val.join(", "),
         validate: (about) => {
           let arr = Array.from(about.split(",")).map((el) => el.trim());
           for (let i = 0; i < arr.length; i++) {
