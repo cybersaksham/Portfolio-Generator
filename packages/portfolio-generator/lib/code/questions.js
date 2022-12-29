@@ -98,6 +98,7 @@ module.exports.aboutQuestions = async () => {
 
   if (aboutData.dob) {
     // Cleaning up birthdate
+    aboutData.dob = new Date(aboutData.dob);
     aboutData.birthDate = aboutData.dob.getDate();
     aboutData.birthMonth = aboutData.dob.getMonth() + 1;
     aboutData.birthYear = aboutData.dob.getFullYear();
