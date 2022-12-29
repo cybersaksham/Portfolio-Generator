@@ -476,7 +476,7 @@ module.exports.portfolioQuestions = async (dummy = false) => {
       { onCancel }
     );
     catTypesList.push(
-      `[${filterVariablesList[i].varibaleName}]: "${category}";`
+      `[${filterVariablesList[i].varibaleName}]: "${category}"`
     );
   }
   portfolioData.catTypes = `{\n ${catTypesList.join(",\n")} \n}`;
@@ -527,8 +527,7 @@ module.exports.portfolioQuestions = async (dummy = false) => {
           name: "desc",
           separator: "\\n",
           message: "Description statements (seperated by \\n)?",
-          format: (val) =>
-            "[" + val.filter(emptyValidator).map(trimmer).join("\n") + "]",
+          format: (val) => val.filter(emptyValidator).map(trimmer),
         },
       ],
       { onCancel }
@@ -567,11 +566,26 @@ module.exports.portfolioQuestions = async (dummy = false) => {
       }
     }
     if (data) {
-      data.urls = "[" + urls.join(",\n") + "]";
-      projectsList.push(data);
+      data.urls = urls;
+      let dataString = "{";
+      for (const key in data) {
+        if (key === "filter") {
+          dataString = dataString.concat(`${key}:${data[key]},`);
+        } else if (key === "desc") {
+          dataString = dataString.concat(
+            `${key}: [ ${data[key].map(JSON.stringify).join(",")} ],`
+          );
+        } else if (key === "urls") {
+          dataString = dataString.concat(`${key}: [ ${data[key].join(",")} ],`);
+        } else {
+          dataString = dataString.concat(`${key}:"${data[key]}",`);
+        }
+      }
+      dataString = dataString.concat("}");
+      projectsList.push(dataString);
     }
   }
-  portfolioData.projectList = projectsList;
+  portfolioData.projectList = "[" + projectsList.join(",") + "]";
 
   return portfolioData;
 };

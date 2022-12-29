@@ -204,6 +204,11 @@ const addData = async (root, dummy = false) => {
   await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
   await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
   await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
+  await insertData(
+    path.join(root, datafiles.portfolio),
+    portfolioQuestions,
+    dummy
+  );
 };
 
 // Insert Data in file
@@ -214,7 +219,11 @@ const insertData = async (filepath, questions, dummy) => {
   console.log(filepath);
   for (const key in data) {
     console.log(key);
-    file = file.replace(`[[${key}]]`, JSON.stringify(data[key]));
+    let replacableData = data[key];
+    if (typeof replacableData === "object") {
+      replacableData = JSON.stringify(replacableData);
+    }
+    file = file.replaceAll(`[[${key}]]`, replacableData);
   }
   fs.writeFileSync(filepath, file);
 };
