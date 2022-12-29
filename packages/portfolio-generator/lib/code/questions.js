@@ -231,6 +231,27 @@ module.exports.contactQuestions = async (dummy = false) => {
 };
 
 module.exports.counterQuestions = async (dummy = false) => {
+  if (dummy) {
+    prompts.inject([
+      4,
+      "bi bi-globe",
+      50,
+      1,
+      "Websites",
+      "bi bi-phone",
+      10,
+      1,
+      "Android Apps",
+      "bi bi-currency-bitcoin",
+      3,
+      1,
+      "Web 3.0 Apps",
+      "bi bi-lightbulb-fill",
+      "2",
+      1,
+      "Years of Experience",
+    ]);
+  }
   // Counter.js Data
   const { itemsCount } = await prompts(
     {
@@ -245,7 +266,7 @@ module.exports.counterQuestions = async (dummy = false) => {
   let items = [];
 
   for (let i = 0; i < itemsCount; i++) {
-    console.log(`\nEnter data for counter item ${i + 1};`);
+    if (!dummy) console.log(`\nEnter data for counter item ${i + 1};`);
     let data = await prompts(
       [
         {
