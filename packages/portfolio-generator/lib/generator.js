@@ -203,6 +203,7 @@ const downloadFiles = async (root) => {
 const addData = async (root, dummy = false) => {
   await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
   await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
+  await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
 };
 
 // Insert Data in file
@@ -213,7 +214,7 @@ const insertData = async (filepath, questions, dummy) => {
   console.log(filepath);
   for (const key in data) {
     console.log(key);
-    file = file.replace(`[[${key}]]`, data[key]);
+    file = file.replace(`[[${key}]]`, JSON.stringify(data[key]));
   }
   fs.writeFileSync(filepath, file);
 };
