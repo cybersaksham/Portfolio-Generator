@@ -1,7 +1,7 @@
 "use strict";
 
 const semver = require("semver");
-const { execSync } = require("child_process");
+const { execSync, exec } = require("child_process");
 const { showError, showWarning } = require("cybersaksham-npm-logs");
 const { program } = require("commander");
 const chalk = require("chalk");
@@ -9,6 +9,8 @@ const packageJson = require("./package.json");
 const { helpFunction, infoFunction } = require("./lib/program");
 const { checkForLatestVersion } = require("./lib/versions");
 const { createApp } = require("./lib/generator");
+const path = require("path");
+const spawn = require("cross-spawn");
 
 module.exports.init = async () => {
   let projectName;
@@ -121,5 +123,97 @@ module.exports.init = async () => {
       console.log();
     }
     await createApp(projectName, options.scriptsVersion, options.dummy);
+
+    // Run npm install
+    try {
+      await installPackages(projectName);
+    } catch (e) {
+      console.log();
+      showWarning({
+        warnings: [
+          "Errors occurred while executing the command:",
+          `  ${chalk.green(e.command)}`,
+        ],
+        summary: [
+          `Although project is downloaded in directory ${chalk.green(
+            path.resolve(projectName)
+          )}`,
+          "",
+          "You can install package manually.",
+          `If you have any problems, do not hesitate to file an issue:`,
+          `  ${chalk.cyan(packageJson.bugs.url)}`,
+        ],
+      });
+      console.log();
+    }
+
+    console.log(
+      `\nSuccess! Created ${chalk.green(projectName)} at ${chalk.cyan(
+        path.resolve(projectName)
+      )}`
+    );
+    console.log(`Inside that directory, you can run several commands:\n`);
+
+    const scripts = [
+      {
+        script: "npm run dev",
+        description: [
+          `Starts the development server.`,
+          `By defualt server is started at ${chalk.cyan(
+            "http://localhost:3000"
+          )}`,
+        ],
+      },
+      {
+        script: "npm run build",
+        description: [`Bundles the app into static files for production.`],
+      },
+      {
+        script: "npm run start",
+        description: [
+          `Starts the production build made by ${chalk.green(
+            "npm run build"
+          )}.`,
+          `By defualt server is started at ${chalk.cyan(
+            "http://localhost:3000"
+          )}`,
+        ],
+      },
+    ];
+    scripts.forEach((script) => {
+      console.log(`  ${chalk.cyan(script.script)}`);
+      script.description.forEach((desc) => {
+        console.log(`    ${desc}`);
+      });
+      console.log();
+    });
+
+    console.log(`We suggest that you begin by typing:\n`);
+    console.log(`  ${chalk.cyan("cd")} ${projectName}`);
+    console.log(`  ${chalk.cyan("npm run dev")}`);
+
+    console.log("\nHappy hacking!");
   }
+};
+
+const installPackages = (projectName) => {
+  return new Promise((resolve, reject) => {
+    console.log("Installing packages. This might take a couple of minutes.\n");
+    let command = "npm";
+    let args = ["install", "--loglevel", "error"];
+    const child = spawn(command, args, {
+      cwd: path.resolve(projectName),
+      stdio: "inherit",
+    });
+    child.on("close", (code) => {
+      if (code !== 0) {
+        reject({
+          command: `${command} ${args.join(" ")}`,
+          code,
+        });
+        return;
+      }
+      resolve();
+    });
+  });
 };
