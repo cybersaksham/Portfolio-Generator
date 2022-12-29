@@ -16,6 +16,21 @@ const minmaxChecker = (val, min = null, max = null) => {
   if (max && value > max) return `Maximum ${max} length allowed.`;
   return true;
 };
+const urlValidator = (url) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (err) {
+    return "URL must be of form https://www.linkedin.com/in/cybersaksham/";
+  }
+};
+const emailValidator = (email) => {
+  let result = email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+  if (result) return true;
+  else return "Email in invalid.";
+};
 
 const applyMultipleValidators = (val, ...validators) => {
   for (let i = 0; i < validators.length; i++) {
@@ -106,4 +121,54 @@ module.exports.aboutQuestions = async () => {
   }
 
   return aboutData;
+};
+
+module.exports.contactQuestions = async () => {
+  // Contact.js Data
+  let contactData = await prompts([
+    {
+      type: "text",
+      name: "twitterLink",
+      message: "Twitter profile link?",
+      validate: urlValidator,
+    },
+    {
+      type: "text",
+      name: "instagramLink",
+      message: "Instagram profile link?",
+      validate: urlValidator,
+    },
+    {
+      type: "text",
+      name: "githubLink",
+      message: "Github profile link?",
+      validate: urlValidator,
+    },
+    {
+      type: "text",
+      name: "linkedinLink",
+      message: "Linkedin profile link?",
+      validate: urlValidator,
+    },
+    {
+      type: "text",
+      name: "phone",
+      message: "Phone no?",
+      validate: (val) => minmaxChecker(val, 1, 15),
+    },
+    {
+      type: "text",
+      name: "email",
+      message: "Email address?",
+      validate: emailValidator,
+    },
+    {
+      type: "text",
+      name: "website",
+      message: "Portfolio Website?",
+      validate: urlValidator,
+    },
+  ]);
+
+  return contactData;
 };
