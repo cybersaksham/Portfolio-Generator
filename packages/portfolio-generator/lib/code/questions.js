@@ -1036,18 +1036,20 @@ module.exports.manifestQuestions = async (dummy = false) => {
   return manifestData;
 };
 
-module.exports.faviconQuestions = async () => {
-  const { favicon } = await prompts(
+module.exports.imagesQuestions = async (filename, extension, message = "") => {
+  const { image } = await prompts(
     {
       type: "text",
-      name: "favicon",
-      message: "Provide absolute path of favicon.ico",
+      name: "image",
+      message: `${
+        message && message.length > 0 ? message + " " : ""
+      }Provide absolute path of ${filename}?`,
       validate: (val) => {
         let filepath = path.resolve(val);
         try {
           fs.readFileSync(filepath);
-          if (path.extname(filepath) !== ".ico") {
-            return "File is not in .ico format";
+          if (path.extname(filepath) !== extension) {
+            return `File is not in ${extension} format`;
           }
           return true;
         } catch (e) {
@@ -1057,5 +1059,5 @@ module.exports.faviconQuestions = async () => {
     },
     { onCancel }
   );
-  return favicon;
+  return image;
 };

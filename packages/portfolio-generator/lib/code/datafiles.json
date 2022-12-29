@@ -6,5 +6,8 @@
   "resume": "Data/Resume.js",
   "skills": "Data/Skills.js",
   "manifest": "public/manifest.json",
-  "favicon": "public/favicon.ico"
+  "favicon": "public/favicon.ico",
+  "404": "public/Gallery/404.webp",
+  "bg": "public/Gallery/bg.webp",
+  "pic": "public/Gallery/pic.webp"
 }
