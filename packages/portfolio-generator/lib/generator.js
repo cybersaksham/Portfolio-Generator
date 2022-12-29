@@ -14,32 +14,32 @@ const structure = require("./code/structure.json");
 const { aboutQuestions } = require("./code/questions");
 
 module.exports.createApp = async (name, version) => {
-  if (!checkNodeVersion()) {
-    showWarning({
-      warnings: [
-        `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.`,
-        `Please update to Node 14 or higher for a better, fully supported experience.`,
-      ],
-      summary: ["Falling to react scripts version react-scripts@0.9.x"],
-    });
-    // Fall back to latest supported react-scripts on Node 4
-    version = "react-scripts@0.9.x";
-  }
+  // if (!checkNodeVersion()) {
+  //   showWarning({
+  //     warnings: [
+  //       `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.`,
+  //       `Please update to Node 14 or higher for a better, fully supported experience.`,
+  //     ],
+  //     summary: ["Falling to react scripts version react-scripts@0.9.x"],
+  //   });
+  //   // Fall back to latest supported react-scripts on Node 4
+  //   version = "react-scripts@0.9.x";
+  // }
 
-  const root = path.resolve(name);
-  const appName = path.basename(root);
-  checkAppName(appName);
+  // const root = path.resolve(name);
+  // const appName = path.basename(root);
+  // checkAppName(appName);
 
-  // Checking directory
-  fs.ensureDirSync(name);
-  isSafeToCreateProjectIn(root, name);
+  // // Checking directory
+  // fs.ensureDirSync(name);
+  // isSafeToCreateProjectIn(root, name);
 
-  // Start creating the project
-  console.log();
-  console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
-  console.log();
+  // // Start creating the project
+  // console.log();
+  // console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
+  // console.log();
 
-  await downloadFiles(root);
+  // await downloadFiles(root);
   await addData();
 };
 

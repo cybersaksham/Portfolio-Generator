@@ -96,10 +96,13 @@ module.exports.aboutQuestions = async () => {
     },
   ]);
 
-  // Cleaning up birthdate
-  aboutData.birthDate = aboutData.dob.getDate();
-  aboutData.birthMonth = aboutData.dob.getMonth() + 1;
-  aboutData.birthYear = aboutData.dob.getFullYear();
-  delete aboutData.dob;
+  if (aboutData.dob) {
+    // Cleaning up birthdate
+    aboutData.birthDate = aboutData.dob.getDate();
+    aboutData.birthMonth = aboutData.dob.getMonth() + 1;
+    aboutData.birthYear = aboutData.dob.getFullYear();
+    delete aboutData.dob;
+  }
+
   return aboutData;
 };
