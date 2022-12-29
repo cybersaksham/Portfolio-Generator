@@ -11,7 +11,11 @@ const chalk = require("chalk");
 
 // Code Imports
 const structure = require("./code/structure.json");
-const { aboutQuestions, contactQuestions } = require("./code/questions");
+const {
+  aboutQuestions,
+  contactQuestions,
+  counterQuestions,
+} = require("./code/questions");
 
 module.exports.createApp = async (name, version, dummy = false) => {
   // if (!checkNodeVersion()) {
@@ -192,9 +196,12 @@ const downloadFiles = async (root) => {
 // Add Data to files
 // Ask data from user and add to files
 const addData = async (dummy = false) => {
-  const aboutData = await aboutQuestions(dummy);
-  console.log(aboutData);
+  // const aboutData = await aboutQuestions(dummy);
+  // console.log(aboutData);
 
-  const contactData = await contactQuestions(dummy);
-  console.log(contactData);
+  // const contactData = await contactQuestions(dummy);
+  // console.log(contactData);
+
+  const counterData = await counterQuestions(dummy);
+  console.log(counterData);
 };

@@ -5,7 +5,7 @@ const packageJson = require("../../package.json");
 
 // Validators
 const trimmer = (val) => val.trim();
-const emptyValidator = (val) => val.trim().length >= 1;
+const emptyValidator = (val) => String(val).trim().length >= 1;
 const birthDateChecker = (val) => {
   let currDate = new Date();
   if (val > currDate) return "Birthdate is in future. Welcome Alien!!";
@@ -14,9 +14,16 @@ const birthDateChecker = (val) => {
 const minmaxChecker = (val, min = null, max = null) => {
   let value = val;
   let lengthTypes = ["string", "object"];
-  if (lengthTypes.indexOf(typeof val) !== -1) value = val.length;
-  if (min && value < min) return `Minimum ${min} length required.`;
-  if (max && value > max) return `Maximum ${max} length allowed.`;
+  let stringType = lengthTypes.indexOf(typeof val) !== -1;
+
+  let unit = "items";
+  if (stringType) {
+    value = val.length;
+    unit = "length";
+  }
+
+  if (min && value < min) return `Minimum ${min} ${unit} required.`;
+  if (max && value > max) return `Maximum ${max} ${unit} allowed.`;
   return true;
 };
 const urlValidator = (url) => {
@@ -221,4 +228,55 @@ module.exports.contactQuestions = async (dummy = false) => {
   );
 
   return contactData;
+};
+
+module.exports.counterQuestions = async (dummy = false) => {
+  // Counter.js Data
+  const { itemsCount } = await prompts(
+    {
+      type: "number",
+      name: "itemsCount",
+      message: "No of counter items you want to include",
+      validate: (val) => minmaxChecker(val, 2, 4),
+    },
+    { onCancel }
+  );
+
+  let items = [];
+
+  for (let i = 0; i < itemsCount; i++) {
+    console.log(`\nEnter data for counter item ${i + 1};`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "icon",
+          message: "Bootstrap icon?",
+          initial: "bi bi-globe",
+        },
+        {
+          type: "number",
+          name: "count",
+          message: "Maximum count?",
+          validate: emptyValidator,
+        },
+        {
+          type: "number",
+          name: "duration",
+          message: "Animation Duration?",
+          validate: emptyValidator,
+        },
+        {
+          type: "text",
+          name: "title",
+          message: "Title?",
+          validate: (val) => minmaxChecker(val, 3, 15),
+        },
+      ],
+      { onCancel }
+    );
+    items.push(data);
+  }
+
+  return { items };
 };
