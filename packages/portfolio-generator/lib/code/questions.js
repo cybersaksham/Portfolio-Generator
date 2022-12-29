@@ -31,7 +31,7 @@ const urlValidator = (url) => {
     new URL(url);
     return true;
   } catch (err) {
-    return "URL must be of form https://www.linkedin.com/in/cybersaksham/";
+    return "Enter a valid url with http or https protocols.";
   }
 };
 const emailValidator = (email) => {
@@ -186,42 +186,49 @@ module.exports.contactQuestions = async (dummy = false) => {
         name: "twitterLink",
         message: "Twitter profile link?",
         validate: urlValidator,
+        format: trimmer,
       },
       {
         type: "text",
         name: "instagramLink",
         message: "Instagram profile link?",
         validate: urlValidator,
+        format: trimmer,
       },
       {
         type: "text",
         name: "githubLink",
         message: "Github profile link?",
         validate: urlValidator,
+        format: trimmer,
       },
       {
         type: "text",
         name: "linkedinLink",
         message: "Linkedin profile link?",
         validate: urlValidator,
+        format: trimmer,
       },
       {
         type: "text",
         name: "phone",
         message: "Phone no?",
         validate: (val) => minmaxChecker(val, 1, 15),
+        format: trimmer,
       },
       {
         type: "text",
         name: "email",
         message: "Email address?",
         validate: emailValidator,
+        format: trimmer,
       },
       {
         type: "text",
         name: "website",
         message: "Portfolio Website?",
         validate: urlValidator,
+        format: trimmer,
       },
     ],
     { onCancel }
@@ -274,6 +281,7 @@ module.exports.counterQuestions = async (dummy = false) => {
           name: "icon",
           message: "Bootstrap icon?",
           initial: "bi bi-globe",
+          format: trimmer,
         },
         {
           type: "number",
@@ -292,6 +300,7 @@ module.exports.counterQuestions = async (dummy = false) => {
           name: "title",
           message: "Title?",
           validate: (val) => minmaxChecker(val, 3, 15),
+          format: trimmer,
         },
       ],
       { onCancel }
@@ -300,4 +309,212 @@ module.exports.counterQuestions = async (dummy = false) => {
   }
 
   return { items };
+};
+
+module.exports.portfolioQuestions = async (dummy = false) => {
+  // Portfolio.js Data
+  let portfolioData = {};
+
+  // filterVariables
+  const { filterVariablesLength } = await prompts(
+    {
+      type: "number",
+      name: "filterVariablesLength",
+      message: "No of filter variables?",
+      initial: 3,
+      validate: (val) => minmaxChecker(val, 3, 8),
+    },
+    { onCancel }
+  );
+  let filterVariablesList = [];
+  for (let i = 0; i < filterVariablesLength; i++) {
+    if (!dummy) console.log(`\nEnter data for filter variable ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "varibaleName",
+          message: "Variable name?",
+          initial: `filter_var_${i + 1}`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, null, 30),
+        },
+        {
+          type: "text",
+          name: "filterName",
+          message: "Filter name?",
+          initial: `var${i + 1}`,
+          format: (val) => "filter-" + trimmer(val),
+          validate: (val) => minmaxChecker(val, null, 10),
+        },
+      ],
+      { onCancel }
+    );
+    filterVariablesList.push(data);
+  }
+  let filterVariableStrings = filterVariablesList.map(
+    (el) => `const ${el.varibaleName} = "${el.filterName}";`
+  );
+  portfolioData.filterVariables = filterVariableStrings.join("\n");
+
+  // filterList
+  portfolioData.filterList = `[${filterVariablesList
+    .map((el) => el.varibaleName)
+    .toString()}]`;
+
+  // urlVariables
+  if (!dummy) console.log();
+  const { urlVariablesLength } = await prompts(
+    {
+      type: "number",
+      name: "urlVariablesLength",
+      message: "No of URL variables?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let urlVariablesList = [];
+  for (let i = 0; i < urlVariablesLength; i++) {
+    if (!dummy) console.log(`\nEnter data for urls variable ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "varibaleName",
+          message: "Variable name?",
+          initial: `url_var_${i + 1}`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, null, 30),
+        },
+        {
+          type: "text",
+          name: "urlName",
+          message: "URL name?",
+          initial: `URL ${i + 1}`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, null, 10),
+        },
+      ],
+      { onCancel }
+    );
+    urlVariablesList.push(data);
+  }
+  let urlVariableStrings = urlVariablesList.map(
+    (el) => `const ${el.varibaleName} = "${el.urlName}";`
+  );
+  portfolioData.urlVariables = urlVariableStrings.join("\n");
+
+  // catTypes
+  if (!dummy) console.log();
+  let catTypesList = [];
+  for (let i = 0; i < filterVariablesLength; i++) {
+    let { category } = await prompts(
+      {
+        type: "text",
+        name: "category",
+        message: `Category name for filter variable ${filterVariablesList[i].varibaleName}?`,
+        initial: `Cat ${i + 1}`,
+        format: trimmer,
+        validate: (val) => minmaxChecker(val, null, 10),
+      },
+      { onCancel }
+    );
+    catTypesList.push(
+      `[${filterVariablesList[i].varibaleName}]: "${category}";`
+    );
+  }
+  portfolioData.catTypes = `{\n ${catTypesList.join(",\n")} \n}`;
+
+  // projectList
+  if (!dummy) console.log();
+  const { projectsLength } = await prompts(
+    {
+      type: "number",
+      name: "projectsLength",
+      message: "No of projects?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let projectsList = [];
+  for (let i = 0; i < projectsLength; i++) {
+    if (!dummy) console.log(`\nEnter data for project ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "name",
+          message: "Project name?",
+          initial: `Project ${i + 1}`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, null, 20),
+        },
+        {
+          type: "autocompleteMultiselect",
+          name: "filter",
+          message: "Select available filters?",
+          format: (val) => `generateFilterString(${val.join(", ")})`,
+          choices: filterVariablesList.map((el) => {
+            return { title: el.varibaleName, value: el.varibaleName };
+          }),
+        },
+        {
+          type: "text",
+          name: "img",
+          message: "Project gallery folder name?",
+          initial: `project-${i + 1}`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, null, 20),
+        },
+        {
+          type: "list",
+          name: "desc",
+          separator: "\\n",
+          message: "Description statements (seperated by \\n)?",
+          format: (val) => val.filter(emptyValidator).map(trimmer),
+        },
+      ],
+      { onCancel }
+    );
+    let urls = [];
+    if (urlVariablesLength > 0) {
+      let { urlsLength } = await prompts(
+        {
+          type: "number",
+          name: "urlsLength",
+          message: "No of URLs for the project?",
+          initial: 0,
+        },
+        { onCancel }
+      );
+      for (let j = 0; j < urlsLength; j++) {
+        let urlData = await prompts([
+          {
+            type: "autocomplete",
+            name: "type",
+            message: "Select url type?",
+            choices: urlVariablesList.map((el) => {
+              return { title: el.varibaleName, value: el.varibaleName };
+            }),
+            validate: emptyValidator,
+          },
+          {
+            type: "text",
+            name: "value",
+            message: "Required URL?",
+            format: trimmer,
+            validate: urlValidator,
+          },
+        ]);
+        urls.push(`[[${urlData.type}], "${urlData.value}"]`);
+      }
+    }
+    if (data) {
+      data.urls = "[" + urls.join(",\n") + "]";
+      projectsList.push(data);
+    }
+  }
+  portfolioData.projectList = projectsList;
+
+  return portfolioData;
 };

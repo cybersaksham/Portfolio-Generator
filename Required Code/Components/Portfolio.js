@@ -19,7 +19,7 @@ const Portfolio = () => {
               </li>
               {filters.map((filter) => (
                 <li data-filter={`.${filter}`} key={filter}>
-                  {filter.split("-")[1]}
+                  {filter.split("-").slice(1).join("-")}
                 </li>
               ))}
             </ul>

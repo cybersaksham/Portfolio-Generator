@@ -15,6 +15,7 @@ const {
   aboutQuestions,
   contactQuestions,
   counterQuestions,
+  portfolioQuestions,
 } = require("./code/questions");
 
 module.exports.createApp = async (name, version, dummy = false) => {
@@ -202,6 +203,9 @@ const addData = async (dummy = false) => {
   // const contactData = await contactQuestions(dummy);
   // console.log(contactData);
 
-  const counterData = await counterQuestions(dummy);
-  console.log(counterData);
+  // const counterData = await counterQuestions(dummy);
+  // console.log(counterData);
+
+  const portfolioData = await portfolioQuestions(dummy);
+  console.log(portfolioData);
 };
