@@ -577,6 +577,40 @@ module.exports.portfolioQuestions = async (dummy = false) => {
 };
 
 module.exports.skillsQuestions = async (dummy = false) => {
+  if (dummy) {
+    prompts.inject([
+      14,
+      "Python",
+      95,
+      "React",
+      95,
+      "Next",
+      90,
+      "Flask",
+      92,
+      "HTML",
+      85,
+      "Blockchain",
+      80,
+      "Bootstrap",
+      80,
+      "Javascript",
+      80,
+      "C++",
+      80,
+      "Flutter",
+      80,
+      "C",
+      75,
+      "Java",
+      75,
+      "Machine Learning",
+      70,
+      "Artificial Intelligence",
+      70,
+    ]);
+  }
+
   // Skill.js
   let skillData = {};
 
