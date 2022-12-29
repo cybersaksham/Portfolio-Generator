@@ -206,6 +206,6 @@ const addData = async (dummy = false) => {
   // const counterData = await counterQuestions(dummy);
   // console.log(counterData);
 
-  const portfolioData = await portfolioQuestions(dummy);
-  console.log(portfolioData);
+  // const portfolioData = await portfolioQuestions(dummy);
+  // console.log(portfolioData);
 };

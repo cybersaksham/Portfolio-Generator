@@ -312,6 +312,62 @@ module.exports.counterQuestions = async (dummy = false) => {
 };
 
 module.exports.portfolioQuestions = async (dummy = false) => {
+  if (dummy) {
+    prompts.inject([
+      6,
+      "game_filter",
+      "game",
+      "web_filter",
+      "web",
+      "desktop_filter",
+      "desktop",
+      "ai_filter",
+      "ai",
+      "android_filter",
+      "android",
+      "blockchain_filter",
+      "blockchain",
+      4,
+      "git",
+      "Github",
+      "playstore",
+      "Playstore",
+      "setup",
+      "Setup",
+      "web",
+      "Website",
+      "Game",
+      "Website",
+      "Desktop App",
+      "Artificial Intelligence",
+      "Android App",
+      "Blockchain",
+      2,
+      "Face Detector",
+      ["ai_filter", "desktop_filter"],
+      "face_detector",
+      [
+        "It is an AI project to detect your face & eyes either by live webcam, uploaded photo or video.",
+        "Made in python using OpenCV.",
+      ],
+      2,
+      "git",
+      "https://github.com/cybersaksham/Face-Detector",
+      "setup",
+      "https://github.com/cybersaksham/Face-Detector/raw/master/setup_face_detector.exe",
+      "INC",
+      ["web_filter", "blockchain_filter"],
+      "inc",
+      [
+        "INC(Indian National Coin) is a demo crypto-currency made in motoko.",
+        "You can view, transfer & receive INC coins on this website",
+      ],
+      1,
+      "git",
+      "https://github.com/cybersaksham/INC",
+    ]);
+  }
+
   // Portfolio.js Data
   let portfolioData = {};
 
@@ -471,7 +527,8 @@ module.exports.portfolioQuestions = async (dummy = false) => {
           name: "desc",
           separator: "\\n",
           message: "Description statements (seperated by \\n)?",
-          format: (val) => val.filter(emptyValidator).map(trimmer),
+          format: (val) =>
+            "[" + val.filter(emptyValidator).map(trimmer).join("\n") + "]",
         },
       ],
       { onCancel }
