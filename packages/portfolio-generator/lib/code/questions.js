@@ -655,6 +655,99 @@ module.exports.skillsQuestions = async (dummy = false) => {
 
 module.exports.resumeQuestions = async (dummy = false) => {
   if (dummy) {
+    prompts.inject([
+      3,
+      "B.Tech Computer Science",
+      "2020 - present",
+      "Malaviya National Institute of Technology, Rajasthan, India",
+      "CGPA: 8.57",
+      "Senior Secondary (XII)",
+      "2019 - 20",
+      "Nirmal Happy Sr. Sec. School, Hindaun, Rajasthan, India",
+      "Percentage: 91.20",
+      "Secondary (X)",
+      "2017 - 18",
+      "DS Science Academy, Gangapur, Rajasthan, India",
+      "Percentage: 96.00",
+      3,
+      "JEE Mains",
+      "AIR: 5126",
+      "JEE Advanced",
+      "AIR: 3086",
+      "KVPY",
+      "AIR: 1403",
+      4,
+      "Languages",
+      [
+        "Java",
+        "Python",
+        "C",
+        "CPP",
+        "Motoko",
+        "Javascript",
+        "Dart",
+        "Scheme",
+        "Assmebly",
+      ],
+      "Platforms",
+      [
+        "Unix",
+        "Git",
+        "Android Studio",
+        "Flutter",
+        "AWS",
+        "Firebase",
+        "Vercel",
+        "Postmam",
+        "Playstore",
+      ],
+      "Frameworks",
+      ["React JS", "Next JS", "Flask", "Node JS"],
+      "Databases",
+      ["MongoDB", "MySql", "SQLAlchemy", "Firestore", "Airtable"],
+      5,
+      "Software Engineer Intern",
+      "Atlassian",
+      "In summer 2023",
+      "Remote + Bangalore",
+      0,
+      0,
+      "Maths Expert",
+      "Chegg Inc.",
+      "Nov 2022 - Present",
+      "Remote",
+      2,
+      "Basic maths expert at Chegg Inc.",
+      "Solve math questions daily.",
+      0,
+      "Flutter App Developer",
+      "Urban Culture",
+      "Apr 2022 - May 2022",
+      "Remote",
+      3,
+      "Leader of website team at Urban Culture.",
+      "Developed Rest APIs.",
+      "Worked on client android app & admin panel in flutter.",
+      0,
+      "Web Developer",
+      "YouthFest MNIT Jaipur",
+      "Dec 2021 - Jan 2022",
+      "Remote",
+      3,
+      "Created a website for MNIT YouthFest 2022",
+      "Leader of team of 6 people",
+      "Frontend in React JS & Backend in Node JS, MongoDB",
+      1,
+      "https://www.mnityouthfest.in/",
+      "Web Developer & Incharge",
+      "Think India MNIT",
+      "Nov 2021 - Oct 2022",
+      "Jaipur, IN",
+      2,
+      "Incharge of Coding team at Think India MNIT.",
+      "We work on different projects like app development, web development.",
+      0,
+    ]);
   }
 
   // Resume.js
@@ -711,7 +804,7 @@ module.exports.resumeQuestions = async (dummy = false) => {
   resumeData.educationList = educationList;
 
   // examList
-  console.log();
+  if (!dummy) console.log();
   let { examLength } = await prompts(
     {
       type: "number",
@@ -748,7 +841,7 @@ module.exports.resumeQuestions = async (dummy = false) => {
   resumeData.examList = examList;
 
   // skillList
-  console.log();
+  if (!dummy) console.log();
   let { skillsLength } = await prompts(
     {
       type: "number",
@@ -784,7 +877,7 @@ module.exports.resumeQuestions = async (dummy = false) => {
   resumeData.skillList = skillsList;
 
   // experienceList
-  console.log();
+  if (!dummy) console.log();
   let { experienceLength } = await prompts(
     {
       type: "number",
