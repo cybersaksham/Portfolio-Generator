@@ -20,6 +20,7 @@ const {
   resumeQuestions,
   manifestQuestions,
 } = require("./code/questions");
+const datafiles = require("./code/datafiles.json");
 
 module.exports.createApp = async (name, version, dummy = false) => {
   // if (!checkNodeVersion()) {
@@ -34,7 +35,7 @@ module.exports.createApp = async (name, version, dummy = false) => {
   //   version = "react-scripts@0.9.x";
   // }
 
-  // const root = path.resolve(name);
+  const root = path.resolve(name);
   // const appName = path.basename(root);
   // checkAppName(appName);
 
@@ -48,7 +49,7 @@ module.exports.createApp = async (name, version, dummy = false) => {
   // console.log();
 
   // await downloadFiles(root);
-  await addData(dummy);
+  await addData(root, dummy);
 };
 
 const checkAppName = (appName) => {
@@ -199,25 +200,20 @@ const downloadFiles = async (root) => {
 
 // Add Data to files
 // Ask data from user and add to files
-const addData = async (dummy = false) => {
-  const aboutData = await aboutQuestions(dummy);
-  console.log(aboutData);
+const addData = async (root, dummy = false) => {
+  await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
+  await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
+};
 
-  const contactData = await contactQuestions(dummy);
-  console.log(contactData);
-
-  const counterData = await counterQuestions(dummy);
-  console.log(counterData);
-
-  const portfolioData = await portfolioQuestions(dummy);
-  console.log(portfolioData);
-
-  const resumeData = await resumeQuestions(dummy);
-  console.log(resumeData);
-
-  const skillData = await skillsQuestions(dummy);
-  console.log(skillData);
-
-  const manifestData = await manifestQuestions(dummy);
-  console.log(manifestData);
+// Insert Data in file
+// Change variables in data file to given data
+const insertData = async (filepath, questions, dummy) => {
+  const data = await questions(dummy);
+  let file = fs.readFileSync(filepath).toString();
+  console.log(filepath);
+  for (const key in data) {
+    console.log(key);
+    file = file.replace(`[[${key}]]`, data[key]);
+  }
+  fs.writeFileSync(filepath, file);
 };

@@ -1,0 +1,8 @@
+{
+  "about": "Data/About.js",
+  "contact": "Data/Contact.js",
+  "counter": "Data/Counter.js",
+  "portfolio": "Data/Portfolio.js",
+  "resume": "Data/Resume.js",
+  "skills": "Data/Skills.js"
+}
