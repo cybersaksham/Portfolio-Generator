@@ -208,33 +208,33 @@ const downloadFiles = async (root) => {
 const addData = async (root, dummy = false) => {
   insertPackageJson(root);
   await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
-  await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
-  await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
-  await insertData(
-    path.join(root, datafiles.portfolio),
-    portfolioQuestions,
-    dummy
-  );
-  await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
-  await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
-  await insertData(
-    path.join(root, datafiles.manifest),
-    manifestQuestions,
-    dummy
-  );
-  if (!dummy) console.log(chalk.cyan("Image") + " Data:\n");
-  await insertImages(
-    path.join(root, datafiles.favicon),
-    dummy,
-    "Favicon Image."
-  );
-  await insertImages(path.join(root, datafiles["404"]), dummy, "Error Image.");
-  await insertImages(path.join(root, datafiles.bg), dummy, "Background Image.");
-  await insertImages(
-    path.join(root, datafiles.pic),
-    dummy,
-    "Upload a picture of yourself."
-  );
+  // await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
+  // await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
+  // await insertData(
+  //   path.join(root, datafiles.portfolio),
+  //   portfolioQuestions,
+  //   dummy
+  // );
+  // await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
+  // await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
+  // await insertData(
+  //   path.join(root, datafiles.manifest),
+  //   manifestQuestions,
+  //   dummy
+  // );
+  // if (!dummy) console.log(chalk.cyan("Image") + " Data:\n");
+  // await insertImages(
+  //   path.join(root, datafiles.favicon),
+  //   dummy,
+  //   "Favicon Image."
+  // );
+  // await insertImages(path.join(root, datafiles["404"]), dummy, "Error Image.");
+  // await insertImages(path.join(root, datafiles.bg), dummy, "Background Image.");
+  // await insertImages(
+  //   path.join(root, datafiles.pic),
+  //   dummy,
+  //   "Upload a picture of yourself."
+  // );
 };
 
 // Insert Data in file
@@ -245,7 +245,6 @@ const insertData = async (filepath, questions, dummy) => {
   let file = fs.readFileSync(filepath).toString();
   for (const key in data) {
     let replacableData = data[key];
-    console.log(replacableData);
     if (typeof replacableData === "object") {
       replacableData = JSON.stringify(replacableData);
     }
