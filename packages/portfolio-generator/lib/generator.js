@@ -222,6 +222,7 @@ const addData = async (root, dummy = false) => {
     manifestQuestions,
     dummy
   );
+  if (!dummy) console.log(chalk.cyan("Image") + " Data:\n");
   await insertImages(
     path.join(root, datafiles.favicon),
     dummy,
@@ -239,6 +240,7 @@ const addData = async (root, dummy = false) => {
 // Insert Data in file
 // Change variables in data file to given data
 const insertData = async (filepath, questions, dummy) => {
+  if (!dummy) console.log(chalk.cyan(path.basename(filepath)) + " Data:\n");
   const data = await questions(dummy);
   let file = fs.readFileSync(filepath).toString();
   for (const key in data) {
@@ -251,6 +253,8 @@ const insertData = async (filepath, questions, dummy) => {
   }
   file = prettier.format(file, { filepath });
   fs.writeFileSync(filepath, file);
+  if (!dummy) console.log();
+  if (!dummy) console.log();
 };
 
 // Insert images
