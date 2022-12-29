@@ -201,12 +201,19 @@ const downloadFiles = async (root) => {
 // Add Data to files
 // Ask data from user and add to files
 const addData = async (root, dummy = false) => {
-  await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
-  await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
-  await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
+  // await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
+  // await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
+  // await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
+  // await insertData(
+  //   path.join(root, datafiles.portfolio),
+  //   portfolioQuestions,
+  //   dummy
+  // );
+  // await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
+  // await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
   await insertData(
-    path.join(root, datafiles.portfolio),
-    portfolioQuestions,
+    path.join(root, datafiles.manifest),
+    manifestQuestions,
     dummy
   );
 };

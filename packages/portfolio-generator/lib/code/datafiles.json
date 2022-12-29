@@ -4,5 +4,6 @@
   "counter": "Data/Counter.js",
   "portfolio": "Data/Portfolio.js",
   "resume": "Data/Resume.js",
-  "skills": "Data/Skills.js"
+  "skills": "Data/Skills.js",
+  "manifest": "public/manifest.json"
 }
