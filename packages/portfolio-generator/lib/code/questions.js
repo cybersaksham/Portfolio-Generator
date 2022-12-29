@@ -652,3 +652,237 @@ module.exports.skillsQuestions = async (dummy = false) => {
 
   return skillData;
 };
+
+module.exports.resumeQuestions = async (dummy = false) => {
+  if (dummy) {
+  }
+
+  // Resume.js
+  let resumeData = {};
+
+  // educationList
+  let { educationLength } = await prompts(
+    {
+      type: "number",
+      name: "educationLength",
+      message: "Number of education items?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let educationList = [];
+  for (let i = 0; i < educationLength; i++) {
+    if (!dummy) console.log(`\nEnter data for education item ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "title",
+          message: "Education title?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "time",
+          message: "Education time?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "from",
+          message: "School/College/University name?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 75),
+        },
+        {
+          type: "text",
+          name: "result",
+          message: "Education result?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+      ],
+      { onCancel }
+    );
+    educationList.push(data);
+  }
+  resumeData.educationList = educationList;
+
+  // examList
+  console.log();
+  let { examLength } = await prompts(
+    {
+      type: "number",
+      name: "examLength",
+      message: "Number of exam items?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let examList = [];
+  for (let i = 0; i < examLength; i++) {
+    if (!dummy) console.log(`\nEnter data for exam item ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "title",
+          message: "Exam title?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "result",
+          message: "Exam result?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+      ],
+      { onCancel }
+    );
+    examList.push(data);
+  }
+  resumeData.examList = examList;
+
+  // skillList
+  console.log();
+  let { skillsLength } = await prompts(
+    {
+      type: "number",
+      name: "skillsLength",
+      message: "Number of skill items?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let skillsList = [];
+  for (let i = 0; i < skillsLength; i++) {
+    if (!dummy) console.log(`\nEnter data for skill item ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "title",
+          message: "Skill type?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 15),
+        },
+        {
+          type: "list",
+          name: "items",
+          message: "Skill items (seperated by comma)?",
+          format: (val) => val.filter(emptyValidator).map(trimmer),
+        },
+      ],
+      { onCancel }
+    );
+    skillsList.push(data);
+  }
+  resumeData.skillList = skillsList;
+
+  // experienceList
+  console.log();
+  let { experienceLength } = await prompts(
+    {
+      type: "number",
+      name: "experienceLength",
+      message: "Number of experience items?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let experienceList = [];
+  for (let i = 0; i < experienceLength; i++) {
+    if (!dummy) console.log(`\nEnter data for experience item ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "title",
+          message: "Experience title?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "company",
+          message: "Company name?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "time",
+          message: "Experience time?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "text",
+          name: "location",
+          message: "Experience location?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 20),
+        },
+      ],
+      { onCancel }
+    );
+    let { pointCount } = await prompts(
+      {
+        type: "number",
+        name: "pointCount",
+        message: "Number of description statements?",
+        initial: 0,
+      },
+      { onCancel }
+    );
+    let points = [];
+    for (let j = 0; j < pointCount; j++) {
+      let { pointData } = await prompts(
+        {
+          type: "text",
+          name: "pointData",
+          message: `Description statement ${j + 1}?`,
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 10, 100),
+        },
+        { onCancel }
+      );
+      points.push(pointData);
+    }
+    let { linksCount } = await prompts(
+      {
+        type: "number",
+        name: "linksCount",
+        message: "Number of urls releated to experience?",
+        initial: 0,
+      },
+      { onCancel }
+    );
+    let links = [];
+    for (let j = 0; j < linksCount; j++) {
+      let { linkData } = await prompts(
+        {
+          type: "text",
+          name: "linkData",
+          message: `Related URL ${j + 1}?`,
+          format: trimmer,
+          validate: urlValidator,
+        },
+        { onCancel }
+      );
+      links.push(linkData);
+    }
+    if (data) {
+      data.points = points;
+      data.links = links;
+      experienceList.push(data);
+    }
+  }
+  resumeData.experienceList = experienceList;
+
+  return resumeData;
+};

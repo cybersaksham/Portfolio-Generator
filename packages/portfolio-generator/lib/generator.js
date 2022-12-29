@@ -17,6 +17,7 @@ const {
   counterQuestions,
   portfolioQuestions,
   skillsQuestions,
+  resumeQuestions,
 } = require("./code/questions");
 
 module.exports.createApp = async (name, version, dummy = false) => {
@@ -210,6 +211,9 @@ const addData = async (dummy = false) => {
   // const portfolioData = await portfolioQuestions(dummy);
   // console.log(portfolioData);
 
-  const skillData = await skillsQuestions(dummy);
-  console.log(skillData);
+  // const skillData = await skillsQuestions(dummy);
+  // console.log(skillData);
+
+  const resumeData = await resumeQuestions(dummy);
+  console.log(resumeData);
 };
