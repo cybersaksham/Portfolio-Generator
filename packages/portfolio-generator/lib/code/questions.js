@@ -16,7 +16,7 @@ const minmaxChecker = (val, min = null, max = null) => {
   let lengthTypes = ["string", "object"];
   let stringType = lengthTypes.indexOf(typeof val) !== -1;
 
-  let unit = "items";
+  let unit = "value";
   if (stringType) {
     value = val.length;
     unit = "length";
@@ -574,4 +574,47 @@ module.exports.portfolioQuestions = async (dummy = false) => {
   portfolioData.projectList = projectsList;
 
   return portfolioData;
+};
+
+module.exports.skillsQuestions = async (dummy = false) => {
+  // Skill.js
+  let skillData = {};
+
+  // skillList
+  let { skillLength } = await prompts(
+    {
+      type: "number",
+      name: "skillLength",
+      message: "Number of skills?",
+      initial: 0,
+    },
+    { onCancel }
+  );
+  let skillsList = [];
+  for (let i = 0; i < skillLength; i++) {
+    if (!dummy) console.log(`\nEnter data for skill ${i + 1}:`);
+    let data = await prompts(
+      [
+        {
+          type: "text",
+          name: "title",
+          message: "Skill name?",
+          format: trimmer,
+          validate: (val) => minmaxChecker(val, 1, 30),
+        },
+        {
+          type: "number",
+          name: "value",
+          message: "Value out of 100?",
+          initial: 0,
+          validate: (val) => minmaxChecker(val, 0, 100),
+        },
+      ],
+      { onCancel }
+    );
+    skillsList.push(data);
+  }
+  skillData.skillList = skillsList;
+
+  return skillData;
 };
