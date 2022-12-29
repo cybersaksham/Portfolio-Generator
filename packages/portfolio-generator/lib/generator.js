@@ -19,6 +19,7 @@ const {
   skillsQuestions,
   resumeQuestions,
   manifestQuestions,
+  faviconQuestions,
 } = require("./code/questions");
 const datafiles = require("./code/datafiles.json");
 
@@ -211,11 +212,12 @@ const addData = async (root, dummy = false) => {
   // );
   // await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
   // await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
-  await insertData(
-    path.join(root, datafiles.manifest),
-    manifestQuestions,
-    dummy
-  );
+  // await insertData(
+  //   path.join(root, datafiles.manifest),
+  //   manifestQuestions,
+  //   dummy
+  // );
+  await insertFavicon(path.join(root, datafiles.favicon), dummy);
 };
 
 // Insert Data in file
@@ -233,4 +235,14 @@ const insertData = async (filepath, questions, dummy) => {
     file = file.replaceAll(`[[${key}]]`, replacableData);
   }
   fs.writeFileSync(filepath, file);
+};
+
+// Insert Data in favicon.ico
+const insertFavicon = async (filepath, dummy) => {
+  if (dummy) {
+  } else {
+    let favicon = await faviconQuestions();
+    let file = fs.readFileSync(favicon);
+    fs.writeFileSync(filepath, file);
+  }
 };

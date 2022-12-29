@@ -1,4 +1,6 @@
 const chalk = require("chalk");
+const path = require("path");
+const fs = require("fs-extra");
 const { showError } = require("cybersaksham-npm-logs");
 const prompts = require("prompts");
 const packageJson = require("../../package.json");
@@ -1032,4 +1034,28 @@ module.exports.manifestQuestions = async (dummy = false) => {
   );
 
   return manifestData;
+};
+
+module.exports.faviconQuestions = async () => {
+  const { favicon } = await prompts(
+    {
+      type: "text",
+      name: "favicon",
+      message: "Provide absolute path of favicon.ico",
+      validate: (val) => {
+        let filepath = path.resolve(val);
+        try {
+          fs.readFileSync(filepath);
+          if (path.extname(filepath) !== ".ico") {
+            return "File is not in .ico format";
+          }
+          return true;
+        } catch (e) {
+          return "File not present";
+        }
+      },
+    },
+    { onCancel }
+  );
+  return favicon;
 };

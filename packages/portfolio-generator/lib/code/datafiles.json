@@ -5,5 +5,6 @@
   "portfolio": "Data/Portfolio.js",
   "resume": "Data/Resume.js",
   "skills": "Data/Skills.js",
-  "manifest": "public/manifest.json"
+  "manifest": "public/manifest.json",
+  "favicon": "public/favicon.ico"
 }
