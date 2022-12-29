@@ -97,6 +97,29 @@ module.exports.init = async () => {
     });
     process.exit(1);
   } else {
+    if (options.dummy) {
+      showWarning({
+        warnings: [
+          `You are building with ${chalk.green("--dummy")} option.`,
+          `  - The website will look like ${chalk.cyan(
+            "https://www.cybersaksham.co.in/"
+          )}`,
+          `  - The generated data will be personal data of ${chalk.green(
+            "Saksham Bindal (cybersaksham)"
+          )}`,
+          "",
+          "  - This data is only for testing purpose. You are not allowed to misuse downloaded data.",
+          "  - You are not allowed to distribute or publish this data.",
+          "",
+          `  - You can also watch dummy website on:`,
+          `      ${chalk.cyan(
+            "https://github.com/cybersaksham/Portfolio-Website-NextJS"
+          )}`,
+          `      ${chalk.cyan("https://www.cybersaksham.co.in/")}`,
+        ],
+      });
+      console.log();
+    }
     await createApp(projectName, options.scriptsVersion, options.dummy);
   }
 };

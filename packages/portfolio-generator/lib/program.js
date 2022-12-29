@@ -25,7 +25,12 @@ module.exports.helpFunction = () => {
     )}`
   );
   console.log(
-    `      - You can also watch his website on ${chalk.cyan(
+    `      - ${chalk.yellow(
+      "This data is only for testing purpose. You are not allowed to misuse downloaded data."
+    )}`
+  );
+  console.log(
+    `      - You can also watch dummy website on ${chalk.cyan(
       "https://github.com/cybersaksham/Portfolio-Website-NextJS"
     )}`
   );
