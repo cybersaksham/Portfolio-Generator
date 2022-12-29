@@ -8,6 +8,7 @@ const { checkNodeVersion } = require("./versions");
 const path = require("path");
 const fs = require("fs-extra");
 const chalk = require("chalk");
+const prettier = require("prettier");
 
 // Code Imports
 const structure = require("./code/structure.json");
@@ -244,6 +245,7 @@ const insertData = async (filepath, questions, dummy) => {
     }
     file = file.replaceAll(`[[${key}]]`, replacableData);
   }
+  file = prettier.format(file, { filepath });
   fs.writeFileSync(filepath, file);
 };
 
