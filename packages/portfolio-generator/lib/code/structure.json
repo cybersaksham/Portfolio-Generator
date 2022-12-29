@@ -447,6 +447,10 @@
       "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/Gallery/pic.webp"
     },
     {
+      "name": "public/favicon.ico",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/favicon.ico"
+    },
+    {
       "name": "public/manifest.json",
       "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/manifest.json"
     },

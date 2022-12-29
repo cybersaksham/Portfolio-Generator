@@ -24,32 +24,32 @@ const {
 const datafiles = require("./code/datafiles.json");
 
 module.exports.createApp = async (name, version, dummy = false) => {
-  // if (!checkNodeVersion()) {
-  //   showWarning({
-  //     warnings: [
-  //       `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.`,
-  //       `Please update to Node 14 or higher for a better, fully supported experience.`,
-  //     ],
-  //     summary: ["Falling to react scripts version react-scripts@0.9.x"],
-  //   });
-  //   // Fall back to latest supported react-scripts on Node 4
-  //   version = "react-scripts@0.9.x";
-  // }
+  if (!checkNodeVersion()) {
+    showWarning({
+      warnings: [
+        `You are using Node ${process.version} so the project will be bootstrapped with an old unsupported version of tools.`,
+        `Please update to Node 14 or higher for a better, fully supported experience.`,
+      ],
+      summary: ["Falling to react scripts version react-scripts@0.9.x"],
+    });
+    // Fall back to latest supported react-scripts on Node 4
+    version = "react-scripts@0.9.x";
+  }
 
   const root = path.resolve(name);
-  // const appName = path.basename(root);
-  // checkAppName(appName);
+  const appName = path.basename(root);
+  checkAppName(appName);
 
-  // // Checking directory
-  // fs.ensureDirSync(name);
-  // isSafeToCreateProjectIn(root, name);
+  // Checking directory
+  fs.ensureDirSync(name);
+  isSafeToCreateProjectIn(root, name);
 
-  // // Start creating the project
-  // console.log();
-  // console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
-  // console.log();
+  // Start creating the project
+  console.log();
+  console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
+  console.log();
 
-  // await downloadFiles(root);
+  await downloadFiles(root);
   await addData(root, dummy);
 };
 
@@ -202,27 +202,27 @@ const downloadFiles = async (root) => {
 // Add Data to files
 // Ask data from user and add to files
 const addData = async (root, dummy = false) => {
-  // await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
-  // await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
-  // await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
-  // await insertData(
-  //   path.join(root, datafiles.portfolio),
-  //   portfolioQuestions,
-  //   dummy
-  // );
-  // await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
-  // await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
-  // await insertData(
-  //   path.join(root, datafiles.manifest),
-  //   manifestQuestions,
-  //   dummy
-  // );
-  // await insertImages(
-  //   path.join(root, datafiles.favicon),
-  //   dummy,
-  //   "Favicon Image."
-  // );
-  // await insertImages(path.join(root, datafiles["404"]), dummy, "Error Image.");
+  await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
+  await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
+  await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
+  await insertData(
+    path.join(root, datafiles.portfolio),
+    portfolioQuestions,
+    dummy
+  );
+  await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
+  await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
+  await insertData(
+    path.join(root, datafiles.manifest),
+    manifestQuestions,
+    dummy
+  );
+  await insertImages(
+    path.join(root, datafiles.favicon),
+    dummy,
+    "Favicon Image."
+  );
+  await insertImages(path.join(root, datafiles["404"]), dummy, "Error Image.");
   await insertImages(path.join(root, datafiles.bg), dummy, "Background Image.");
   await insertImages(
     path.join(root, datafiles.pic),
