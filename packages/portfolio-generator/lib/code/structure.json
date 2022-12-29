@@ -435,8 +435,16 @@
       "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/assets/vendor/waypoints/noframework.waypoints.js"
     },
     {
-      "name": "public/favicon.ico",
-      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/favicon.ico"
+      "name": "public/Gallery/404.webp",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/Gallery/404.webp"
+    },
+    {
+      "name": "public/Gallery/bg.webp",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/Gallery/bg.webp"
+    },
+    {
+      "name": "public/Gallery/pic.webp",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/Gallery/pic.webp"
     },
     {
       "name": "public/manifest.json",
