@@ -4,6 +4,7 @@ const fs = require("fs-extra");
 const { showError } = require("cybersaksham-npm-logs");
 const prompts = require("prompts");
 const packageJson = require("../../package.json");
+const dummyData = require("./DummyData");
 
 // Validators
 const trimmer = (val) => val.trim();
@@ -78,21 +79,7 @@ const onCancel = (prompt) => {
 
 module.exports.aboutQuestions = async (dummy = false) => {
   if (dummy) {
-    prompts.inject([
-      "Saksham Bindal",
-      [
-        "Full Stack Developer",
-        "Flutter App Developer",
-        "Blockchain Developer",
-        "Competitive Coder",
-        "Entrepreneur",
-      ],
-      "Pursuing B. Tech at MNIT Jaipur in Computer Science Branch. 3rd Year Student.",
-      "I'm a developer with experience in building full-stack websites for individuals and organizations. I also develop flutter android apps. I am expert in Python, CPP, MERN Stack, Next JS, Flask. I am a competitive coder. I develop Web 3.0 Decentralized apps (DApps) based on blockchain technology & ICP (Internet Computer Protocol)",
-      "2000-01-01T00:00:00.000Z",
-      "Hindaun, Rajasthan, India",
-      "UG",
-    ]);
+    prompts.inject(dummyData.aboutData);
   }
   // About.js Data
   let aboutData = await prompts(
