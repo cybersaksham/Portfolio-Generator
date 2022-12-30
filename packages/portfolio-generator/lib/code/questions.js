@@ -486,14 +486,14 @@ module.exports.portfolioQuestions = async (root, dummy = false) => {
     }
     if (!dummy) {
       // Adding Image
-      let addImage = await addFileConfirmation(
+      let addImage = await this.addFileConfirmation(
         "Do you want to add an image file for this project? If you dont add then an error image (404.webp) will be shown."
       );
       if (addImage) {
         let folderPath = path.join(root, "public/Gallery/Projects", data.img);
         fs.ensureDirSync(folderPath);
         let filepath = path.join(folderPath, "0.webp");
-        let filedata = await fileQuestions(
+        let filedata = await this.fileQuestions(
           path.basename(filepath),
           path.extname(filepath),
           "A webp image of 800x600 size would give better results."
