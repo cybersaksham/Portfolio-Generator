@@ -60,13 +60,15 @@ const config = {
           alt: `${appData.appName} Logo`,
           src: "img/logo.svg",
         },
+        hideOnScroll: true,
         items: [
           { to: appData.docURL, label: "Docs", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: appData.githubURL,
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },
