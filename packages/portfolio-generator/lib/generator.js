@@ -20,7 +20,8 @@ const {
   skillsQuestions,
   resumeQuestions,
   manifestQuestions,
-  imagesQuestions,
+  fileQuestions,
+  resumeConfirmation,
 } = require("./code/questions");
 const datafiles = require("./code/datafiles.json");
 
@@ -223,18 +224,28 @@ const addData = async (root, dummy = false) => {
     dummy
   );
   if (!dummy) console.log(chalk.cyan("Image") + " Data:\n");
-  await insertImages(
+  await insertFiles(
     path.join(root, datafiles.favicon),
     dummy,
     "Favicon Image."
   );
-  await insertImages(path.join(root, datafiles["404"]), dummy, "Error Image.");
-  await insertImages(path.join(root, datafiles.bg), dummy, "Background Image.");
-  await insertImages(
+  await insertFiles(path.join(root, datafiles["404"]), dummy, "Error Image.");
+  await insertFiles(path.join(root, datafiles.bg), dummy, "Background Image.");
+  await insertFiles(
     path.join(root, datafiles.pic),
     dummy,
     "Upload a picture of yourself."
   );
+  if (!dummy) {
+    let addResume = await resumeConfirmation();
+    if (addResume) {
+      await insertFiles(
+        path.join(root, datafiles.resumePdf),
+        dummy,
+        "Upload pdf of your resume."
+      );
+    }
+  }
 };
 
 // Insert Data in file
@@ -256,17 +267,17 @@ const insertData = async (filepath, questions, dummy) => {
   if (!dummy) console.log();
 };
 
-// Insert images
-// Insert favicon.ico, webp image
-const insertImages = async (filepath, dummy, message = "") => {
+// Insert files
+// Insert favicon.ico, webp image, Resume.pdf
+const insertFiles = async (filepath, dummy, message = "") => {
   if (dummy) {
   } else {
-    let image = await imagesQuestions(
+    let filedata = await fileQuestions(
       path.basename(filepath),
       path.extname(filepath),
       message
     );
-    let file = fs.readFileSync(image);
+    let file = fs.readFileSync(filedata);
     fs.writeFileSync(filepath, file);
   }
 };

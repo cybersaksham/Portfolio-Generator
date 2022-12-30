@@ -826,11 +826,11 @@ module.exports.manifestQuestions = async (dummy = false) => {
   return manifestData;
 };
 
-module.exports.imagesQuestions = async (filename, extension, message = "") => {
-  const { image } = await prompts(
+module.exports.fileQuestions = async (filename, extension, message = "") => {
+  const { file } = await prompts(
     {
       type: "text",
-      name: "image",
+      name: "file",
       message: `${
         message && message.length > 0 ? message + " " : ""
       }Provide absolute path of ${filename}?`,
@@ -849,5 +849,22 @@ module.exports.imagesQuestions = async (filename, extension, message = "") => {
     },
     { onCancel }
   );
-  return image;
+  return file;
+};
+
+module.exports.resumeConfirmation = async () => {
+  let { answer } = await prompts(
+    {
+      type: "confirm",
+      name: "answer",
+      message: "Do you want to add pdf file for resume?",
+      initial: false,
+    },
+    {
+      onCancel: (prompt, ans) => {
+        ans.answer = false;
+      },
+    }
+  );
+  return answer;
 };

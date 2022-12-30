@@ -9,5 +9,6 @@
   "favicon": "public/favicon.ico",
   "404": "public/Gallery/404.webp",
   "bg": "public/Gallery/bg.webp",
-  "pic": "public/Gallery/pic.webp"
+  "pic": "public/Gallery/pic.webp",
+  "resumePdf": "public/Resume.pdf"
 }
