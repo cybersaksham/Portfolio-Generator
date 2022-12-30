@@ -4,11 +4,22 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+const appData = {
+  appName: "Portfolio Generator",
+  description: "Generates a bootstrap based portfolio website for you.",
+  website: "https://portfolio-generator.cybersaksham.co.in",
+  author: "cybersaksham",
+  repository: "portfolio-generator",
+  githubURL: "https://github.com/cybersaksham/Portfolio-Generator",
+  editURL:
+    "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
+};
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Portfolio Generator",
-  tagline: "Generates a bootstrap based portfolio website for you.",
-  url: "https://your-docusaurus-test-site.com",
+  title: appData.appName,
+  tagline: appData.description,
+  url: appData.website,
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -16,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "cybersaksham", // Usually your GitHub org/user name.
-  projectName: "portfolio-generator", // Usually your repo name.
+  organizationName: appData.author, // Usually your GitHub org/user name.
+  projectName: appData.repository, // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -34,13 +45,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl:
-            "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
+          editUrl: appData.editURL,
         },
         blog: {
           showReadingTime: true,
-          editUrl:
-            "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
+          editUrl: appData.editURL,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -53,16 +62,16 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Portfolio Generator",
+        title: appData.appName,
         logo: {
-          alt: "Portfolio Generator Logo",
+          alt: `${appData.appName} Logo`,
           src: "img/logo.svg",
         },
         items: [
           { to: "/docs/intro", label: "Docs", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/cybersaksham/Portfolio-Generator",
+            href: appData.githubURL,
             label: "GitHub",
             position: "right",
           },
@@ -75,7 +84,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
+                label: "Introduction",
                 to: "/docs/intro",
               },
             ],
@@ -85,16 +94,16 @@ const config = {
             items: [
               {
                 label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                href: `https://stackoverflow.com/questions/tagged/${appData.repository}`,
               },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
+              // {
+              //   label: "Discord",
+              //   href: "https://discordapp.com/invite/portfolio-generator",
+              // },
+              // {
+              //   label: "Twitter",
+              //   href: "https://twitter.com/cybersaksham",
+              // },
             ],
           },
           {
@@ -106,12 +115,14 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: appData.githubURL,
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} ${
+          appData.appName
+        }, Inc. Built by ${appData.author}.`,
       },
       prism: {
         theme: lightCodeTheme,
