@@ -1,12 +1,10 @@
 {
-  "name": "portfolio-generator",
-  "version": "3.0.1",
-  "description": "This package generates a bootstrap based portfolio website for you.",
-  "main": "index.js",
-  "scripts": {
-    "portfolio-generator": "node tasks/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "docusaurus"
+  ],
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cybersaksham/Portfolio-Generator.git"
@@ -18,16 +16,9 @@
     "boootstrap",
     "portfolio-generator"
   ],
-  "author": "cybersaksham",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cybersaksham/Portfolio-Generator/issues"
   },
-  "homepage": "https://github.com/cybersaksham/Portfolio-Generator#readme",
-  "bin": {
-    "portfolio-generator": "tasks/index.js"
-  },
-  "dependencies": {
-    "chalk": "^5.2.0"
-  }
+  "homepage": "https://github.com/cybersaksham/Portfolio-Generator#readme"
 }
