@@ -6,6 +6,7 @@ import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import GettingStarted from "@site/src/components/GettingStarted";
+import appData from "../../appdata.config.json";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -15,10 +16,10 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.getStarted}>
+        <div className={styles.getStarted}>
           <Link
             className="button button--outline button--primary button--lg"
-            to="/docs/intro"
+            to={appData.docURL}
           >
             Get Started
           </Link>

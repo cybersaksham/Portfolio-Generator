@@ -21,9 +21,9 @@ Then open [http://localhost:3000/](http://localhost:3000/) to see your portfolio
 
 When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
-<p align='center'>
+<!-- <p align='center'>
 <img src="https://cdn.jsdelivr.net/gh/cybersaksham/Portfolio-Generator@latest/screencast.svg" alt='npm start' />
-</p>
+</p> -->
 
 <!-- ### Get Started Immediately
 
