@@ -1,0 +1,229 @@
+---
+id: getting-started
+title: Getting Started
+---
+
+Portfolio Generator is an officially supported way to create your own portfolio website in `Next JS`. It offers a modern build setup with no configuration.
+
+## Quick Start
+
+```sh
+npx portfolio-generator@latest my-portfolio
+cd my-app
+npm run dev
+```
+
+> If you've previously installed `portfolio-generator` globally via `npm install -g portfolio-generator`, we recommend you uninstall the package using `npm uninstall -g portfolio-generator` to ensure that `npx` always uses the latest version.
+
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+
+Then open [http://localhost:3000/](http://localhost:3000/) to see your portfolio.
+
+When you’re ready to deploy to production, create a minified bundle with `npm run build`.
+
+<p align='center'>
+<img src="https://cdn.jsdelivr.net/gh/cybersaksham/Portfolio-Generator@latest/screencast.svg" alt='npm start' />
+</p>
+
+<!-- ### Get Started Immediately
+
+You **don’t** need to install or configure tools like webpack or Babel. They are preconfigured and hidden so that you can focus on the code.
+
+Create a project, and you’re good to go. -->
+
+## Creating an App
+
+**You’ll need to have Node >= 14 to build the portfolio.** You can use [nvm](https://github.com/creationix/nvm#installation) (macOS/Linux) or [nvm-windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) to switch Node versions between different projects.
+
+To create a new app, you may choose one of the following methods:
+
+### npx
+
+```sh
+npx portfolio-generator@latest my-portfolio
+```
+
+_([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher, see [instructions for older npm versions](https://gist.github.com/gaearon/4064d3c23a77c74a3614c498a8bb1c5f))_
+
+### npm
+
+```sh
+npm i -g portfolio-generator
+portfolio-generator my-portfolio
+```
+
+### Yarn
+
+- Portfolio generator don&apos;t support yarn currently
+
+## Output
+
+Running any of these commands will create a directory called `my-portfolio` inside the current folder. Inside that directory, it will generate the initial project structure, feeds all data you will give while building and install the transitive dependencies:
+
+```
+my-portfolio
+├── Components
+│   ├── About.js
+│   ├── Contact.js
+│   ├── Detail.js
+│   ├── Header.js
+│   ├── Portfolio.js
+│   ├── Resume.js
+│   ├── Service.js
+│   └── ValidImage.js
+├── Data
+│   ├── About.js
+│   ├── Contact.js
+│   ├── Counter.js
+│   ├── Portfolio.js
+│   ├── Resume.js
+│   └── Skills.js
+├── pages
+│   ├── api
+│   │   └── sendMail.js
+│   ├── detail
+│   │   └── [id].js
+│   ├── _app.js
+│   ├── _document.js
+│   └── index.js
+├── public
+│   ├── assets
+│   │   ├── js
+│   │   │   └── main.js
+│   │   └── vendor
+│   │       ├── bootstrap
+│   │       │   ├── css
+│   │       │   │   ├── bootstrap.css
+│   │       │   │   ├── bootstrap.css.map
+│   │       │   │   ├── bootstrap-grid.css
+│   │       │   │   ├── bootstrap-grid.css.map
+│   │       │   │   ├── bootstrap-grid.min.css
+│   │       │   │   ├── bootstrap-grid.min.css.map
+│   │       │   │   ├── bootstrap-grid.rtl.css
+│   │       │   │   ├── bootstrap-grid.rtl.css.map
+│   │       │   │   ├── bootstrap-grid.rtl.min.css
+│   │       │   │   ├── bootstrap-grid.rtl.min.css.map
+│   │       │   │   ├── bootstrap.min.css
+│   │       │   │   ├── bootstrap.min.css.map
+│   │       │   │   ├── bootstrap-reboot.css
+│   │       │   │   ├── bootstrap-reboot.css.map
+│   │       │   │   ├── bootstrap-reboot.min.css
+│   │       │   │   ├── bootstrap-reboot.min.css.map
+│   │       │   │   ├── bootstrap-reboot.rtl.css
+│   │       │   │   ├── bootstrap-reboot.rtl.css.map
+│   │       │   │   ├── bootstrap-reboot.rtl.min.css
+│   │       │   │   ├── bootstrap-reboot.rtl.min.css.map
+│   │       │   │   ├── bootstrap.rtl.css
+│   │       │   │   ├── bootstrap.rtl.css.map
+│   │       │   │   ├── bootstrap.rtl.min.css
+│   │       │   │   ├── bootstrap.rtl.min.css.map
+│   │       │   │   ├── bootstrap-utilities.css
+│   │       │   │   ├── bootstrap-utilities.css.map
+│   │       │   │   ├── bootstrap-utilities.min.css
+│   │       │   │   ├── bootstrap-utilities.min.css.map
+│   │       │   │   ├── bootstrap-utilities.rtl.css
+│   │       │   │   ├── bootstrap-utilities.rtl.css.map
+│   │       │   │   ├── bootstrap-utilities.rtl.min.css
+│   │       │   │   └── bootstrap-utilities.rtl.min.css.map
+│   │       │   └── js
+│   │       │       ├── bootstrap.bundle.js
+│   │       │       ├── bootstrap.bundle.js.map
+│   │       │       ├── bootstrap.bundle.min.js
+│   │       │       ├── bootstrap.bundle.min.js.map
+│   │       │       ├── bootstrap.esm.js
+│   │       │       ├── bootstrap.esm.js.map
+│   │       │       ├── bootstrap.esm.min.js
+│   │       │       ├── bootstrap.esm.min.js.map
+│   │       │       ├── bootstrap.js
+│   │       │       ├── bootstrap.js.map
+│   │       │       ├── bootstrap.min.js
+│   │       │       └── bootstrap.min.js.map
+│   │       ├── bootstrap-icons
+│   │       │   ├── fonts
+│   │       │   │   ├── bootstrap-icons.woff
+│   │       │   │   └── bootstrap-icons.woff2
+│   │       │   ├── bootstrap-icons.css
+│   │       │   ├── bootstrap-icons.json
+│   │       │   └── index.html
+│   │       ├── boxicons
+│   │       │   ├── css
+│   │       │   │   ├── animations.css
+│   │       │   │   ├── boxicons.css
+│   │       │   │   ├── boxicons.min.css
+│   │       │   │   └── transformations.css
+│   │       │   └── fonts
+│   │       │       ├── boxicons.eot
+│   │       │       ├── boxicons.svg
+│   │       │       ├── boxicons.ttf
+│   │       │       ├── boxicons.woff
+│   │       │       └── boxicons.woff2
+│   │       ├── glightbox
+│   │       │   ├── css
+│   │       │   │   ├── glightbox.css
+│   │       │   │   └── glightbox.min.css
+│   │       │   └── js
+│   │       │       ├── glightbox.js
+│   │       │       └── glightbox.min.js
+│   │       ├── isotope-layout
+│   │       │   ├── isotope.pkgd.js
+│   │       │   └── isotope.pkgd.min.js
+│   │       ├── purecounter
+│   │       │   └── purecounter.js
+│   │       ├── remixicon
+│   │       │   ├── remixicon.css
+│   │       │   ├── remixicon.eot
+│   │       │   ├── remixicon.less
+│   │       │   ├── remixicon.svg
+│   │       │   ├── remixicon.symbol.svg
+│   │       │   ├── remixicon.ttf
+│   │       │   ├── remixicon.woff
+│   │       │   └── remixicon.woff2
+│   │       ├── swiper
+│   │       │   ├── swiper-bundle.min.css
+│   │       │   └── swiper-bundle.min.js
+│   │       └── waypoints
+│   │           └── noframework.waypoints.js
+│   ├── Gallery
+│   │   ├── Projects
+│   │   ├── 404.webp
+│   │   ├── bg.webp
+│   │   └── pic.webp
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── Resume.pdf
+├── styles
+│   └── globals.css
+├── .eslintrc.json
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md
+
+28 directories, 108 files
+```
+
+No need to tihnk about complicated folder stucture. These are files required to run your portfolio. Once the installation is done, you can open your portfolio folder:
+
+```sh
+cd my-portfolio
+```
+
+## Scripts
+
+Inside the newly created project, you can run some built-in commands:
+
+### `npm start`
+
+- Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- The page will automatically reload if you make changes to the code. You will see the build errors and lint warnings in the console.
+
+### `npm run build`
+
+- Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+- The build is minified and the filenames include the hashes.
+- Your app is ready to be deployed.
+
+### `npm run start`
+
+- Runs the production bundle in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Running the script `npm run build` is necessary to build production bundle. Otherwise this script will not run.

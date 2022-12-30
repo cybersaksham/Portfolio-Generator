@@ -6,6 +6,6 @@
   "repository": "portfolio-generator",
   "githubURL": "https://github.com/cybersaksham/Portfolio-Generator",
   "editURL": "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
-  "screencastURL": "",
+  "screencastURL": "https://cdn.jsdelivr.net/gh/cybersaksham/Portfolio-Generator@latest/screencast.svg",
   "docURL": "/docs/intro"
 }
