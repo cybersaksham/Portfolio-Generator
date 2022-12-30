@@ -1,0 +1,9 @@
+{
+  "appName": "Portfolio Generator",
+  "description": "Generates a bootstrap based portfolio website for you.",
+  "website": "https://portfolio-generator.cybersaksham.co.in",
+  "author": "cybersaksham",
+  "repository": "portfolio-generator",
+  "githubURL": "https://github.com/cybersaksham/Portfolio-Generator",
+  "editURL": "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus"
+}

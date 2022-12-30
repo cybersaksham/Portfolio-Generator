@@ -1,19 +1,10 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require("prism-react-renderer/themes/palenight");
+const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
 
-const appData = {
-  appName: "Portfolio Generator",
-  description: "Generates a bootstrap based portfolio website for you.",
-  website: "https://portfolio-generator.cybersaksham.co.in",
-  author: "cybersaksham",
-  repository: "portfolio-generator",
-  githubURL: "https://github.com/cybersaksham/Portfolio-Generator",
-  editURL:
-    "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
-};
+const appData = require("./appdata.config.json");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
