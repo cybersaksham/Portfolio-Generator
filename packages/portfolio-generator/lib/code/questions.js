@@ -5,6 +5,7 @@ const { showError } = require("cybersaksham-npm-logs");
 const prompts = require("prompts");
 const packageJson = require("../../package.json");
 const dummyData = require("./DummyData");
+const datafiles = require("./datafiles.json");
 
 // Validators
 const trimmer = (val) => val.trim();
@@ -77,7 +78,7 @@ const onCancel = (prompt) => {
   process.exit(1);
 };
 
-module.exports.aboutQuestions = async (dummy = false) => {
+module.exports.aboutQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.aboutData);
   }
@@ -161,7 +162,7 @@ module.exports.aboutQuestions = async (dummy = false) => {
   return aboutData;
 };
 
-module.exports.contactQuestions = async (dummy = false) => {
+module.exports.contactQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.contactData);
   }
@@ -225,7 +226,7 @@ module.exports.contactQuestions = async (dummy = false) => {
   return contactData;
 };
 
-module.exports.counterQuestions = async (dummy = false) => {
+module.exports.counterQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.counterData);
   }
@@ -281,7 +282,7 @@ module.exports.counterQuestions = async (dummy = false) => {
   return { items };
 };
 
-module.exports.portfolioQuestions = async (dummy = false) => {
+module.exports.portfolioQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.portfolioData);
   }
@@ -483,6 +484,24 @@ module.exports.portfolioQuestions = async (dummy = false) => {
         urls.push(`[[${urlData.type}], "${urlData.value}"]`);
       }
     }
+    if (!dummy) {
+      // Adding Image
+      let addImage = await addFileConfirmation(
+        "Do you want to add an image file for this project? If you dont add then an error image (404.webp) will be shown."
+      );
+      if (addImage) {
+        let folderPath = path.join(root, "public/Gallery/Projects", data.img);
+        fs.ensureDirSync(folderPath);
+        let filepath = path.join(folderPath, "0.webp");
+        let filedata = await fileQuestions(
+          path.basename(filepath),
+          path.extname(filepath),
+          "A webp image of 800x600 size would give better results."
+        );
+        let file = fs.readFileSync(filedata);
+        fs.writeFileSync(filepath, file);
+      }
+    }
     if (data) {
       data.urls = urls;
       let dataString = "{";
@@ -508,7 +527,7 @@ module.exports.portfolioQuestions = async (dummy = false) => {
   return portfolioData;
 };
 
-module.exports.skillsQuestions = async (dummy = false) => {
+module.exports.skillsQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.skillData);
   }
@@ -555,7 +574,7 @@ module.exports.skillsQuestions = async (dummy = false) => {
   return skillData;
 };
 
-module.exports.resumeQuestions = async (dummy = false) => {
+module.exports.resumeQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.resumeData);
   }
@@ -790,7 +809,7 @@ module.exports.resumeQuestions = async (dummy = false) => {
   return resumeData;
 };
 
-module.exports.manifestQuestions = async (dummy = false) => {
+module.exports.manifestQuestions = async (root, dummy = false) => {
   if (dummy) {
     prompts.inject(dummyData.manifestData);
   }
@@ -852,12 +871,12 @@ module.exports.fileQuestions = async (filename, extension, message = "") => {
   return file;
 };
 
-module.exports.resumeConfirmation = async () => {
+module.exports.addFileConfirmation = async (message) => {
   let { answer } = await prompts(
     {
       type: "confirm",
       name: "answer",
-      message: "Do you want to add pdf file for resume?",
+      message,
       initial: false,
     },
     {

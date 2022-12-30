@@ -21,7 +21,7 @@ const {
   resumeQuestions,
   manifestQuestions,
   fileQuestions,
-  resumeConfirmation,
+  addFileConfirmation,
 } = require("./code/questions");
 const datafiles = require("./code/datafiles.json");
 
@@ -208,39 +208,31 @@ const downloadFiles = async (root) => {
 // Ask data from user and add to files
 const addData = async (root, dummy = false) => {
   insertPackageJson(root);
-  await insertData(path.join(root, datafiles.about), aboutQuestions, dummy);
-  await insertData(path.join(root, datafiles.contact), contactQuestions, dummy);
-  await insertData(path.join(root, datafiles.counter), counterQuestions, dummy);
-  await insertData(
-    path.join(root, datafiles.portfolio),
-    portfolioQuestions,
-    dummy
-  );
-  await insertData(path.join(root, datafiles.resume), resumeQuestions, dummy);
-  await insertData(path.join(root, datafiles.skills), skillsQuestions, dummy);
-  await insertData(
-    path.join(root, datafiles.manifest),
-    manifestQuestions,
-    dummy
-  );
+  await insertData(root, datafiles.about, aboutQuestions, dummy);
+  await insertData(root, datafiles.contact, contactQuestions, dummy);
+  await insertData(root, datafiles.counter, counterQuestions, dummy);
+  await insertData(root, datafiles.portfolio, portfolioQuestions, dummy);
+  await insertData(root, datafiles.resume, resumeQuestions, dummy);
+  await insertData(root, datafiles.skills, skillsQuestions, dummy);
+  await insertData(root, datafiles.manifest, manifestQuestions, dummy);
   if (!dummy) console.log(chalk.cyan("Image") + " Data:\n");
+  await insertFiles(root, datafiles.favicon, dummy, "Favicon Image.");
+  await insertFiles(root, datafiles["404"], dummy, "Error Image.");
+  await insertFiles(root, datafiles.bg, dummy, "Background Image.");
   await insertFiles(
-    path.join(root, datafiles.favicon),
-    dummy,
-    "Favicon Image."
-  );
-  await insertFiles(path.join(root, datafiles["404"]), dummy, "Error Image.");
-  await insertFiles(path.join(root, datafiles.bg), dummy, "Background Image.");
-  await insertFiles(
-    path.join(root, datafiles.pic),
+    root,
+    datafiles.pic,
     dummy,
     "Upload a picture of yourself."
   );
   if (!dummy) {
-    let addResume = await resumeConfirmation();
+    let addResume = await addFileConfirmation(
+      "Do you want to add pdf file for resume?"
+    );
     if (addResume) {
       await insertFiles(
-        path.join(root, datafiles.resumePdf),
+        root,
+        datafiles.resumePdf,
         dummy,
         "Upload pdf of your resume."
       );
@@ -250,9 +242,10 @@ const addData = async (root, dummy = false) => {
 
 // Insert Data in file
 // Change variables in data file to given data
-const insertData = async (filepath, questions, dummy) => {
+const insertData = async (root, fileLocation, questions, dummy) => {
+  let filepath = path.join(root, fileLocation);
   if (!dummy) console.log(chalk.cyan(path.basename(filepath)) + " Data:\n");
-  const data = await questions(dummy);
+  const data = await questions(root, dummy);
   let file = fs.readFileSync(filepath).toString();
   for (const key in data) {
     let replacableData = data[key];
@@ -269,9 +262,10 @@ const insertData = async (filepath, questions, dummy) => {
 
 // Insert files
 // Insert favicon.ico, webp image, Resume.pdf
-const insertFiles = async (filepath, dummy, message = "") => {
+const insertFiles = async (root, fileLocation, dummy, message = "") => {
   if (dummy) {
   } else {
+    let filepath = path.join(root, fileLocation);
     let filedata = await fileQuestions(
       path.basename(filepath),
       path.extname(filepath),
