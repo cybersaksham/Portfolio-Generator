@@ -4,10 +4,10 @@
 [![Size][size-image]][npm-url] [![License][license-image]][npm-url]
 
 [npm-url]: https://www.npmjs.com/package/portfolio-generator
-[downloads-image]: https://img.shields.io/npm/dm/portfolio-generator.svg
-[npm-image]: https://img.shields.io/npm/v/portfolio-generator.svg
-[size-image]: https://packagephobia.now.sh/badge?p=portfolio-generator
-[license-image]: https://img.shields.io/npm/l/portfolio-generator.svg
+[downloads-image]: http://img.shields.io/npm/dm/portfolio-generator.svg?style=for-the-badge
+[npm-image]: http://img.shields.io/npm/v/portfolio-generator.svg?style=for-the-badge
+[size-image]: http://img.shields.io/bundlephobia/min/portfolio-generator.svg?style=for-the-badge
+[license-image]: http://img.shields.io/npm/l/portfolio-generator.svg?style=for-the-badge
 
 - This package generates a bootstrap based portfolio website for you.
 - Website will be using Next JS.
@@ -36,15 +36,12 @@
 │   ├── Portfolio.js
 │   ├── Resume.js
 │   └── Skills.js
-├── .gitignore
-├── next.config.js
-├── package.json
 ├── pages
 │   ├── api
 │   │   └── sendMail.js
-│   ├── _app.js
 │   ├── detail
 │   │   └── [id].js
+│   ├── _app.js
 │   ├── _document.js
 │   └── index.js
 ├── public
@@ -100,11 +97,11 @@
 │   │       │       ├── bootstrap.min.js
 │   │       │       └── bootstrap.min.js.map
 │   │       ├── bootstrap-icons
-│   │       │   ├── bootstrap-icons.css
-│   │       │   ├── bootstrap-icons.json
 │   │       │   ├── fonts
 │   │       │   │   ├── bootstrap-icons.woff
 │   │       │   │   └── bootstrap-icons.woff2
+│   │       │   ├── bootstrap-icons.css
+│   │       │   ├── bootstrap-icons.json
 │   │       │   └── index.html
 │   │       ├── boxicons
 │   │       │   ├── css
@@ -144,19 +141,23 @@
 │   │       │   └── swiper-bundle.min.js
 │   │       └── waypoints
 │   │           └── noframework.waypoints.js
-│   ├── favicon.ico
 │   ├── Gallery
+│   │   ├── Projects
 │   │   ├── 404.webp
 │   │   ├── bg.webp
-│   │   ├── pic.webp
-│   │   └── Projects
+│   │   └── pic.webp
+│   ├── favicon.ico
 │   ├── manifest.json
 │   └── Resume.pdf
-├── README.md
-└── styles
-    └── globals.css
+├── styles
+│   └── globals.css
+├── .eslintrc.json
+├── .gitignore
+├── next.config.js
+├── package.json
+└── README.md
 
-28 directories, 107 files
+28 directories, 108 files
 ```
 
 # Data Files
@@ -174,12 +175,12 @@
 │   ├── Resume.js
 │   └── Skills.js
 └── public
-    ├── favicon.ico
     ├── Gallery
+    │   ├── Projects
     │   ├── 404.webp
     │   ├── bg.webp
-    │   ├── pic.webp
-    │   └── Projects
+    │   └── pic.webp
+    ├── favicon.ico
     ├── manifest.json
     └── Resume.pdf
 
