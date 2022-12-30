@@ -36,13 +36,11 @@ const config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.json"),
-          editUrl: appData.editURL,
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
-          editUrl: appData.editURL,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

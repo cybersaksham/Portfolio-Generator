@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Welcome": ["intro"],
+    "Welcome": ["Welcome/intro", "Welcome/about"],
     "Getting Started": [
       "Getting Started/installation",
       "Getting Started/folder-structure",
