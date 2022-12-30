@@ -14,7 +14,7 @@ const birthday = givenDate
 
 if (month < 0) year -= 1;
 else if (month === 0) {
-  if (date < 19) year -= 1;
+  if (date < [[birthDate]]) year -= 1;
 }
 
 const about = {

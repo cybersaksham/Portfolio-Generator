@@ -6,6 +6,6 @@
       "Getting Started/folder-structure",
       "Getting Started/scripts"
     ],
-    "Customizing": ["Customizing/datafiles"]
+    "Customizing": ["Customizing/datafiles", "Customizing/about"]
   }
 }
