@@ -10,6 +10,17 @@
   overflow: hidden;
 }
 
+.heroBannerLogo {
+  max-width: 170px;
+  max-height: 170px;
+}
+
+.getStarted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

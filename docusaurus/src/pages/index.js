@@ -3,9 +3,9 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
 import styles from "./index.module.css";
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import GettingStarted from "@site/src/components/GettingStarted";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -15,7 +15,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+          <div className={styles.getStarted}>
           <Link
             className="button button--outline button--primary button--lg"
             to="/docs/intro"
@@ -35,6 +35,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <GettingStarted />
       </main>
     </Layout>
   );
