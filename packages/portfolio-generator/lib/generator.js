@@ -236,6 +236,8 @@ const addData = async (root, dummy = false) => {
         dummy,
         "Upload pdf of your resume."
       );
+    } else {
+      fs.unlinkSync(path.join(root, datafiles.resumePdf));
     }
   }
 };
