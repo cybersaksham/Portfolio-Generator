@@ -59,7 +59,7 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          { to: "/docs/intro", label: "Docs", position: "left" },
+          { to: appData.docURL, label: "Docs", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           {
             href: appData.githubURL,
@@ -76,7 +76,7 @@ const config = {
             items: [
               {
                 label: "Introduction",
-                to: "/docs/intro",
+                to: appData.docURL,
               },
             ],
           },

@@ -1,47 +1,21 @@
 ---
 sidebar_position: 1
+title: Introduction
+sidebar_label: About Docs
 ---
 
-# Tutorial Intro
+# About the Documentation
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the Portfolio Generator documentation!
 
-## Getting Started
+## Navigation
 
-Get started by **creating a new site**.
+You can find different topics in the table of contents. On desktop, you should see it in the left sidebar. On mobile, you should see it after pressing an icon with arrows in the top left corner.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Something Missing?
 
-### What you'll need
+If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/cybersaksham/portfolio-generator/issues) or [contribute some!](https://github.com/cybersaksham/portfolio-generator/tree/master/docusaurus/docs)
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Feedback
 
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+We are always open to [your feedback](https://github.com/cybersaksham/portfolio-generator/issues).
