@@ -10,7 +10,6 @@ import appData from "../../appdata.config.json";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  console.log(siteConfig);
   return (
     <header className={clsx("hero hero--dark", styles.heroBanner)}>
       <div className="container">
