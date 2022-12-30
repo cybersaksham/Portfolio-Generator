@@ -455,6 +455,10 @@
       "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/manifest.json"
     },
     {
+      "name": "public/Resume.pdf",
+      "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/public/Resume.pdf"
+    },
+    {
       "name": "styles/globals.css",
       "source": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/Required%20Code/styles/globals.css"
     }
