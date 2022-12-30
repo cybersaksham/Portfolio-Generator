@@ -270,7 +270,7 @@ module.exports.counterQuestions = async (root, dummy = false) => {
           type: "text",
           name: "title",
           message: "Title?",
-          validate: (val) => minmaxChecker(val, 3, 15),
+          validate: (val) => minmaxChecker(val, 3, 25),
           format: trimmer,
         },
       ],
@@ -769,7 +769,7 @@ module.exports.resumeQuestions = async (root, dummy = false) => {
           name: "pointData",
           message: `Description statement ${j + 1}?`,
           format: trimmer,
-          validate: (val) => minmaxChecker(val, 10, 100),
+          validate: (val) => minmaxChecker(val, 10, 150),
         },
         { onCancel }
       );
