@@ -12,4 +12,16 @@ import BrowserWindow from '@site/src/components/BrowserWindow';
 ```mdx-code-block
 <BrowserWindow url={"https://www.cybersaksham.co.in"} imgSrc={"https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/docusaurus/docs/assets/website/about.png"} isWebsite={true}>
 </BrowserWindow>
+<button className="button button--secondary" style={{float:"right", clear:"both"}} onClick={()=>{
+    let elem = document.getElementById("website");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+        /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+        /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}}>Full Screen</button>
 ```

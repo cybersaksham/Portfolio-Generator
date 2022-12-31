@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
 
 import styles from "./styles.module.css";
@@ -15,6 +15,29 @@ export default function BrowserWindow({
   imgSrc,
   isWebsite = false,
 }) {
+  function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  useEffect(() => {
+    addEventListener("fullscreenchange", () => {
+      let images = document.getElementsByClassName("fullscreenimage");
+      if (document.fullscreenElement) {
+        Array.from(images).forEach((image) => (image.style.opacity = 1));
+      } else {
+        Array.from(images).forEach((image) => (image.style.opacity = 0));
+      }
+    });
+  }, []);
+
   return (
     <div className={styles.browserWindow}>
       <div className={styles.browserWindowHeader}>
@@ -44,9 +67,16 @@ export default function BrowserWindow({
         }}
       >
         {isWebsite ? (
-          <iframe src={url} height="100%" width="100%" />
+          <iframe id="website" src={url} height="100%" width="100%" />
         ) : (
-          <img src={imgSrc} style={{ visibility: "hidden" }} />
+          <img
+            className="fullscreenimage"
+            src={imgSrc}
+            style={{ cursor: "pointer", opacity: 0 }}
+            onClick={(e) => {
+              openFullscreen(e.target);
+            }}
+          />
         )}
       </div>
     </div>
