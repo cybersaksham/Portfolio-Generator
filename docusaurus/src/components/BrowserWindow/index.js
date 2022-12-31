@@ -11,12 +11,16 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 
 export default function BrowserWindow({
-  children,
-  minHeight,
   url = "http://localhost:3000",
+  imgSrc,
 }) {
   return (
-    <div className={styles.browserWindow} style={{ minHeight }}>
+    <div
+      className={styles.browserWindow}
+      style={{
+        backgroundImage: `url(${imgSrc})`,
+      }}
+    >
       <div className={styles.browserWindowHeader}>
         <div className={styles.buttons}>
           <span className={styles.dot} style={{ background: "#f25f58" }} />
@@ -35,7 +39,9 @@ export default function BrowserWindow({
         </div>
       </div>
 
-      <div className={styles.browserWindowBody}>{children}</div>
+      <div className={styles.browserWindowBody}>
+        <img src={imgSrc} style={{ visibility: "hidden" }} />
+      </div>
     </div>
   );
 }
