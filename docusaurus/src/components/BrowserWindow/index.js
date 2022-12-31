@@ -13,14 +13,10 @@ import styles from "./styles.module.css";
 export default function BrowserWindow({
   url = "http://localhost:3000",
   imgSrc,
+  isWebsite = false,
 }) {
   return (
-    <div
-      className={styles.browserWindow}
-      style={{
-        backgroundImage: `url(${imgSrc})`,
-      }}
-    >
+    <div className={styles.browserWindow}>
       <div className={styles.browserWindowHeader}>
         <div className={styles.buttons}>
           <span className={styles.dot} style={{ background: "#f25f58" }} />
@@ -39,8 +35,19 @@ export default function BrowserWindow({
         </div>
       </div>
 
-      <div className={styles.browserWindowBody}>
-        <img src={imgSrc} style={{ visibility: "hidden" }} />
+      <div
+        className={styles.browserWindowBody}
+        style={{
+          backgroundImage: `url(${imgSrc})`,
+          width: "100%",
+          height: "500px",
+        }}
+      >
+        {isWebsite ? (
+          <iframe src={url} height="100%" width="100%" />
+        ) : (
+          <img src={imgSrc} style={{ visibility: "hidden" }} />
+        )}
       </div>
     </div>
   );

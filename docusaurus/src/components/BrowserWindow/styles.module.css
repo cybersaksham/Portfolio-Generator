@@ -6,17 +6,15 @@
  */
 
 .browserWindow {
-  border: 3px solid var(--ifm-color-emphasis-200);
+  border: 5px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);
   margin-bottom: var(--ifm-leading);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .browserWindowHeader {
   align-items: center;
-  background: var(--ifm-color-emphasis-200);
+  background: var(--ifm-color-emphasis-300);
   display: flex;
   padding: 0.5rem 1rem;
 }
@@ -81,6 +79,8 @@
   padding: 0 !important;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .browserWindowBody > *:last-child {
