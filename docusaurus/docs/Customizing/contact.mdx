@@ -1,0 +1,73 @@
+---
+id: contact
+slug: /datafile-contact
+title: Contact.js
+sidebar_label: Contact.js
+---
+
+## Raw Code
+
+This is the raw code which will be downloaded at time of building the portfolio.
+:::info
+Portfolio Generator will ask you for data which can replace the variables.
+If you don&apos;t enter correct data, then you can change variables manually also.
+:::
+
+```js title=Data/Contact.js
+const contact_links = {
+  twitter: "[[twitterLink]]",
+  instagram: "[[instagramLink]]",
+  github: "[[githubLink]]",
+  linkedin: "[[linkedinLink]]",
+  phone: "[[phone]]",
+  email: "[[email]]",
+  website: "[[website]]",
+};
+
+export default contact_links;
+```
+
+## Variables
+
+:::caution
+You can refer this table if you have any kind of confusion regarding adding data into variables.
+Remember variables are very sensitive respect to their types and data format.
+Data should be added in the instructed format only.
+:::
+
+| Variable     | Description           | Type | Constraint            | Example                                   |
+| ------------ | --------------------- | ---- | --------------------- | ----------------------------------------- |
+| twitterLink  | Twitter Profile Link  | URL  | Must be a valid URL   | https://twitter.com/cybersaksham          |
+| instaLink    | Insta Profile Link    | URL  | Must be a valid URL   | https://www.instagram.com/saksham.1908    |
+| githubLink   | Github Profile Link   | URL  | Must be a valid URL   | https://github.com/cybersaksham           |
+| linkedinLink | Linkedin Profile Link | URL  | Must be a valid URL   | https://www.linkedin.com/in/cybersaksham/ |
+| phone        | Phone No              | Text | Length 1 to 15        |                                           |
+| email        | Email Address         | Text | Must be a valid Email | saksham.bindal2004@gmail.com              |
+| website      | Website Link          | URL  | Must be a valid URL   | https://www.cybersaksham.co.in            |
+
+## Final Code Example
+
+After adding the data, the code will look like:
+
+```js title=Data/Contact.js
+const contact_links = {
+  twitter: "https://twitter.com/cybersaksham",
+  instagram: "https://www.instagram.com/saksham.1908",
+  github: "https://github.com/cybersaksham",
+  linkedin: "https://www.linkedin.com/in/cybersaksham/",
+  phone: "+91 **********",
+  email: "saksham.bindal2004@gmail.com",
+  website: "https://www.cybersaksham.co.in",
+};
+
+export default contact_links;
+```
+
+:::danger
+
+- Above data is dummy data which will be produced when you run portfolio-project with `--dummy` option.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
