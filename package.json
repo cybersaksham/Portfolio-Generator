@@ -1,9 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "docusaurus"
-  ],
   "scripts": {},
   "repository": {
     "type": "git",
