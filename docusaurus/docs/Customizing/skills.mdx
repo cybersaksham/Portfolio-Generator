@@ -1,0 +1,89 @@
+---
+id: skills
+slug: /datafile-skills
+title: Skills.js
+sidebar_label: Skills.js
+---
+
+## Raw Code
+
+This is the raw code which will be downloaded at time of building the portfolio.
+:::info
+Portfolio Generator will ask you for data which can replace the variables.
+If you don&apos;t enter correct data, then you can change variables manually also.
+:::
+
+```js title=Data/Skills.js
+const skills = [[skillList]];
+
+export default skills;
+```
+
+## Variables
+
+:::caution
+You can refer this table if you have any kind of confusion regarding adding data into variables.
+Remember variables are very sensitive respect to their types and data format.
+Data should be added in the instructed format only.
+:::
+
+| Variable        | Description                    | Type      | Details            |
+| --------------- | ------------------------------ | --------- | ------------------ |
+| **skillList\*** | Generated list for skill items | List Code | [View](#skillList) |
+
+:::info
+Data which will be asked by `portfolio-generator` for variable marked as **\*** will be in different format.
+:::
+
+<br />
+
+### Data Asked by `portfolio-generator` for variable `skillList` {#skillList}
+
+| Variable    | Description           | Type    | Constraint     | Example |
+| ----------- | --------------------- | ------- | -------------- | ------- |
+| **Count\*** | Number of skill items | Integer |                |         |
+| Skill Name  | Name of skill         | Text    | Max length 30  | Python  |
+| Skill Value | Value out of 100      | Integer | Value 0 to 100 | 95      |
+
+:::tip
+
+- `Count` will be asked only once.
+- Then all variables will be asked `Count` times i.e. once for each skill item.
+
+:::
+
+<br />
+
+## Final Code Example
+
+After adding the data, the code will look like:
+
+```js title=Data/Skill.js
+const skills = [
+  { title: "Python", value: 95 },
+  { title: "React", value: 95 },
+  { title: "Next", value: 90 },
+  { title: "Flask", value: 92 },
+  { title: "HTML", value: 85 },
+  { title: "Blockchain", value: 80 },
+  { title: "Bootstrap", value: 80 },
+  { title: "Javascript", value: 80 },
+  { title: "C++", value: 80 },
+  { title: "Flutter", value: 80 },
+  { title: "C", value: 75 },
+  { title: "Java", value: 75 },
+  { title: "Machine Learning", value: 70 },
+  { title: "Artificial Intelligence", value: 70 },
+];
+
+export default skills;
+```
+
+:::danger
+
+- Above data is dummy data which will be produced when you run portfolio-project with `--dummy` option.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
