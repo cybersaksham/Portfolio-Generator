@@ -31,10 +31,9 @@
   "Face Detector",
   ["ai_filter", "desktop_filter"],
   "face_detector",
-  [
-    "It is an AI project to detect your face & eyes either by live webcam, uploaded photo or video.",
-    "Made in python using OpenCV."
-  ],
+  2,
+  "It is an AI project to detect your face & eyes either by live webcam, uploaded photo or video.",
+  "Made in python using OpenCV.",
   2,
   "git",
   "https://github.com/cybersaksham/Face-Detector",
@@ -43,10 +42,9 @@
   "INC",
   ["web_filter", "blockchain_filter"],
   "inc",
-  [
-    "INC(Indian National Coin) is a demo crypto-currency made in motoko.",
-    "You can view, transfer & receive INC coins on this website"
-  ],
+  2,
+  "INC(Indian National Coin) is a demo crypto-currency made in motoko.",
+  "You can view, transfer & receive INC coins on this website",
   1,
   "git",
   "https://github.com/cybersaksham/INC"

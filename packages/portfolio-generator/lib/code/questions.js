@@ -441,16 +441,32 @@ module.exports.portfolioQuestions = async (root, dummy = false) => {
           format: trimmer,
           validate: (val) => minmaxChecker(val, null, 20),
         },
-        {
-          type: "list",
-          name: "desc",
-          separator: "\\n",
-          message: "Description statements (seperated by \\n)?",
-          format: (val) => val.filter(emptyValidator).map(trimmer),
-        },
       ],
       { onCancel }
     );
+    let { pointCount } = await prompts(
+      {
+        type: "number",
+        name: "pointCount",
+        message: "Number of description statements?",
+        initial: 0,
+      },
+      { onCancel }
+    );
+    let points = [];
+    for (let j = 0; j < pointCount; j++) {
+      let { pointData } = await prompts(
+        {
+          type: "text",
+          name: "pointData",
+          message: `Description statement ${j + 1}?`,
+          format: trimmer,
+          validate: emptyValidator,
+        },
+        { onCancel }
+      );
+      points.push(pointData);
+    }
     let urls = [];
     if (urlVariablesLength > 0) {
       let { urlsLength } = await prompts(
@@ -503,6 +519,7 @@ module.exports.portfolioQuestions = async (root, dummy = false) => {
       }
     }
     if (data) {
+      data.desc = points;
       data.urls = urls;
       let dataString = "{";
       for (const key in data) {
