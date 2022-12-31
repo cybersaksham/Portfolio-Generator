@@ -18,12 +18,12 @@
       "Customizing/other-files"
     ],
     "Website Gallery": [
-      "Gallery/website",
-      "Gallery/home",
-      "Gallery/about",
-      "Gallery/resume",
-      "Gallery/portfolio",
-      "Gallery/contact"
+      "Gallery/gallery-website",
+      "Gallery/gallery-home",
+      "Gallery/gallery-about",
+      "Gallery/gallery-resume",
+      "Gallery/gallery-portfolio",
+      "Gallery/gallery-contact"
     ]
   }
 }

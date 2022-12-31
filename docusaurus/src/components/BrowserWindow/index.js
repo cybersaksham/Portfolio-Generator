@@ -5,8 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import clsx from "clsx";
+import Loader from "../Loader";
 
 import styles from "./styles.module.css";
 
@@ -26,6 +27,8 @@ export default function BrowserWindow({
       elem.msRequestFullscreen();
     }
   }
+
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     addEventListener("fullscreenchange", () => {
@@ -66,12 +69,23 @@ export default function BrowserWindow({
           height: "500px",
         }}
       >
+        {loader && <Loader />}
         {isWebsite ? (
-          <iframe id="website" src={url} height="100%" width="100%" />
+          <iframe
+            onLoad={() => {
+              setLoader(false);
+            }}
+            id="website"
+            src={url}
+            height="100%"
+            width="100%"
+            style={{ visibility: loader ? "hidden" : "visible" }}
+          />
         ) : (
           <img
             className="fullscreenimage"
             src={imgSrc}
+            onLoad={() => setLoader(false)}
             style={{ cursor: "pointer", opacity: 0 }}
             onClick={(e) => {
               openFullscreen(e.target);
