@@ -9,7 +9,8 @@
     "Customizing": [
       "Customizing/datafiles",
       "Customizing/about",
-      "Customizing/contact"
+      "Customizing/contact",
+      "Customizing/counter"
     ]
   }
 }

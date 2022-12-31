@@ -1,0 +1,87 @@
+---
+id: counter
+slug: /datafile-counter
+title: Counter.js
+sidebar_label: Counter.js
+---
+
+## Raw Code
+
+This is the raw code which will be downloaded at time of building the portfolio.
+:::info
+Portfolio Generator will ask you for data which can replace the variables.
+If you don&apos;t enter correct data, then you can change variables manually also.
+:::
+
+```js title=Data/Counter.js
+const counterItems = [[items]];
+
+export default counterItems;
+```
+
+## Variables
+
+:::caution
+You can refer this table if you have any kind of confusion regarding adding data into variables.
+Remember variables are very sensitive respect to their types and data format.
+Data should be added in the instructed format only.
+:::
+
+| Variable    | Description           | Type | Constraint    | Example |
+| ----------- | --------------------- | ---- | ------------- | ------- |
+| **items\*** | List of counter items | List | Length 2 to 4 |         |
+
+:::info
+Data which will be asked by `portfolio-generator` for variable marked as **\*** will be in different format.
+:::
+
+### Data Asked by `portfolio-generator` for variable `items`
+
+| Variable         | Description                      | Type    | Constraint     | Example             |
+| ---------------- | -------------------------------- | ------- | -------------- | ------------------- |
+| **itemsCount\*** | Number of items in list          | Integer | Value 2 to 4   |                     |
+| icon             | Name of bootstrap icon class     | Text    |                | `bi bi-globe`       |
+| count            | Number upto animation should run | Integer |                |                     |
+| duration         | Duration of animation in seconds | Integer |                | 2                   |
+| title            | Title of item                    | Text    | Length 3 to 25 | Years of Experience |
+
+:::tip
+
+- `itemsCount` will be asked only once.
+- Then all variables will be asked `itemsCount` times i.e. once for each item.
+
+:::
+
+## Final Code Example
+
+After adding the data, the code will look like:
+
+```js title=Data/Contact.js
+const counterItems = [
+  { icon: "bi bi-globe", count: 50, duration: 1, title: "Websites" },
+  { icon: "bi bi-phone", count: 10, duration: 1, title: "Android Apps" },
+  {
+    icon: "bi bi-currency-bitcoin",
+    count: 3,
+    duration: 1,
+    title: "Web 3.0 Apps",
+  },
+  {
+    icon: "bi bi-lightbulb-fill",
+    count: "2",
+    duration: 1,
+    title: "Years of Experience",
+  },
+];
+
+export default counterItems;
+```
+
+:::danger
+
+- Above data is dummy data which will be produced when you run portfolio-project with `--dummy` option.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
