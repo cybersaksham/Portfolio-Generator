@@ -54,6 +54,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: "Q65KXJLU8N",
+        apiKey: "fd5b8be15d9e9c16d13224de912ef83a",
+        indexName: "portfolio-generator",
+      },
       navbar: {
         title: appData.appName,
         logo: {
