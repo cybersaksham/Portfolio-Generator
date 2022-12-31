@@ -73,6 +73,11 @@ module.exports.init = async () => {
   // registry.
   let latest;
   try {
+    console.log(
+      chalk.cyan("[INFO]"),
+      "Checking version of",
+      chalk.green(packageJson.name)
+    );
     latest = await checkForLatestVersion(packageJson.name);
   } catch (e) {
     try {
@@ -100,6 +105,7 @@ module.exports.init = async () => {
     process.exit(1);
   } else {
     if (options.dummy) {
+      console.log();
       showWarning({
         warnings: [
           `You are building with ${chalk.green("--dummy")} option.`,
@@ -192,13 +198,16 @@ module.exports.init = async () => {
     console.log(`  ${chalk.cyan("cd")} ${projectName}`);
     console.log(`  ${chalk.cyan("npm run dev")}`);
 
-    console.log("\nHappy hacking!");
+    console.log("\nHappy hacking!\n");
   }
 };
 
 const installPackages = (projectName) => {
   return new Promise((resolve, reject) => {
-    console.log("Installing packages. This might take a couple of minutes.\n");
+    console.log(
+      chalk.cyan("[INFO]"),
+      "Installing packages. This might take a couple of minutes."
+    );
     let command = "npm";
     let args = ["install", "--loglevel", "error"];
     const child = spawn(command, args, {

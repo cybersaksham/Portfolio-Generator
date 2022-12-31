@@ -47,8 +47,11 @@ module.exports.createApp = async (name, version, dummy = false) => {
   isSafeToCreateProjectIn(root, name);
 
   // Start creating the project
-  console.log();
-  console.log(`Creating a new Portfolio project in ${chalk.green(root)}.`);
+  console.log(
+    `${chalk.cyan("[INFO]")} Creating a new Portfolio project in ${chalk.green(
+      root
+    )}.`
+  );
   console.log();
 
   await downloadFiles(root);
