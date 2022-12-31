@@ -1,0 +1,79 @@
+---
+id: manifest
+slug: /datafile-manifest
+title: manifest.json
+sidebar_label: Manifest File
+---
+
+## Raw Code
+
+This is the raw code which will be downloaded at time of building the portfolio.
+:::info
+Portfolio Generator will ask you for data which can replace the variables.
+If you don&apos;t enter correct data, then you can change variables manually also.
+:::
+
+```json title=Data/manifest.json
+{
+  "author": "[[author]]",
+  "short_name": "[[shortName]]",
+  "name": "[[name]]",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
+```
+
+## Variables
+
+:::caution
+You can refer this table if you have any kind of confusion regarding adding data into variables.
+Remember variables are very sensitive respect to their types and data format.
+Data should be added in the instructed format only.
+:::
+
+| Variable  | Description                | Type | Constraint       | Example                             |
+| --------- | -------------------------- | ---- | ---------------- | ----------------------------------- |
+| author    | Author of the website      | Text |                  | cybersaksham                        |
+| shortName | Short name for the website | Text | Length 5 to 30   | Saksham Bindal                      |
+| name      | One line for the website   | Text | Length 10 to 100 | Portfolio website of Saksham Bindal |
+
+## Final Code Example
+
+After adding the data, the code will look like:
+
+```json title=Data/manifest.json
+{
+  "author": "cybersaksham",
+  "short_name": "Saksham Bindal",
+  "name": "Portfolio website of Saksham Bindal",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000"
+}
+```
+
+:::danger
+
+- Above data is dummy data which will be produced when you run portfolio-project with `--dummy` option.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
