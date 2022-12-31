@@ -1,0 +1,257 @@
+---
+id: resume
+slug: /datafile-resume
+title: Resume.js
+sidebar_label: Resume.js
+---
+
+## Raw Code
+
+This is the raw code which will be downloaded at time of building the portfolio.
+:::info
+Portfolio Generator will ask you for data which can replace the variables.
+If you don&apos;t enter correct data, then you can change variables manually also.
+:::
+
+```js title=Data/Resume.js
+const education = [[educationList]];
+
+const exams = [[examList]];
+
+const skills = [[skillList]];
+
+const experience = [[experienceList]];
+
+export default { education, exams, skills, experience };
+```
+
+## Variables
+
+:::caution
+You can refer this table if you have any kind of confusion regarding adding data into variables.
+Remember variables are very sensitive respect to their types and data format.
+Data should be added in the instructed format only.
+:::
+
+| Variable             | Description                        | Type      | Details                 |
+| -------------------- | ---------------------------------- | --------- | ----------------------- |
+| **educationList\***  | Generated list for education items | List Code | [View](#educationList)  |
+| **examList\***       | Generated list for exams           | List Code | [View](#examList)       |
+| **skillList\***      | Generated list for skills          | List Code | [View](#skillList)      |
+| **experienceList\*** | Generated list for experiences     | List Code | [View](#experienceList) |
+
+:::info
+Data which will be asked by `portfolio-generator` for variable marked as **\*** will be in different format.
+:::
+
+<br />
+
+### Data Asked by `portfolio-generator` for variable `educationList` {#educationList}
+
+| Variable      | Description                    | Type    | Constraint    | Example     |
+| ------------- | ------------------------------ | ------- | ------------- | ----------- |
+| **Count\***   | Number of education items      | Integer |               |             |
+| Title         | Title of education             | Text    | Max length 30 | B.Tech CSE  |
+| Time          | Time duration                  | Text    | Max length 30 | 2020 - 2024 |
+| Educated from | School/College/University name | Text    | Max length 75 | MNIT Jaipur |
+| Result        | Education result               | Text    | Max length 30 | CGPA:8.57   |
+
+:::tip
+
+- `Count` will be asked only once.
+- Then all variables will be asked `Count` times i.e. once for each education item.
+
+:::
+
+<br />
+
+### Data Asked by `portfolio-generator` for variable `examList` {#examList}
+
+| Variable    | Description     | Type    | Constraint    | Example   |
+| ----------- | --------------- | ------- | ------------- | --------- |
+| **Count\*** | Number of exams | Integer |               |           |
+| Title       | Exam name       | Text    | Max length 30 | JEE Mains |
+| Result      | Exam result     | Text    | Max length 30 | AIR: 5126 |
+
+:::tip
+
+- `Count` will be asked only once.
+- Then all variables will be asked `Count` times i.e. once for each exam.
+
+:::
+
+<br />
+
+### Data Asked by `portfolio-generator` for variable `skillList` {#skillList}
+
+| Variable    | Description                      | Type    | Constraint    | Example         |
+| ----------- | -------------------------------- | ------- | ------------- | --------------- |
+| **Count\*** | Number of skills                 | Integer |               |                 |
+| Title       | Skill type/title                 | Text    | Max length 15 | Languages       |
+| Items       | Skill items (seperated by comma) | Text    | Max length 30 | Java, Python, C |
+
+:::tip
+
+- `Count` will be asked only once.
+- Then all variables will be asked `Count` times i.e. once for each skill item.
+
+:::
+
+<br />
+
+### Data Asked by `portfolio-generator` for variable `experienceList` {#experienceList}
+
+| Variable          | Description                                    | Type    | Constraint          | Example            |
+| ----------------- | ---------------------------------------------- | ------- | ------------------- | ------------------ |
+| **Count\***       | Number of experience items                     | Integer |                     |
+| Title             | Experience title                               | Text    | Max length 30       | Software Developer |
+| Company           | Company name                                   | Text    | Max length 30       | Atlassian          |
+| Time              | Time duration                                  | Text    | Max length 30       | In summer 2023     |
+| Location          | Work location                                  | Text    | Max length 20       | Remote             |
+| Description Count | Number of statements describing the experience | Integer |                     |                    |
+| Descriptions      | Description statement ony by one               | Text    | Length 10 to 150    |                    |
+| Links Count       | Number of URL links related to the experience  | Integer |                     |                    |
+| Links             | URL link ony by one                            | URL     | Must be a valid URL |                    |
+
+:::tip
+
+- `Count` will be asked only once.
+- Then all variables will be asked `Count` times i.e. once for each project.
+
+:::
+
+<br />
+
+## Final Code Example
+
+After adding the data, the code will look like:
+
+```js title=Data/Resume.js
+const education = [
+  {
+    title: "B.Tech Computer Science",
+    time: "2020 - present",
+    from: "Malaviya National Institute of Technology, Rajasthan, India",
+    result: "CGPA: 8.57",
+  },
+  {
+    title: "Senior Secondary (XII)",
+    time: "2019 - 20",
+    from: "Nirmal Happy Sr. Sec. School, Hindaun, Rajasthan, India",
+    result: "Percentage: 91.20",
+  },
+  {
+    title: "Secondary (X)",
+    time: "2017 - 18",
+    from: "DS Science Academy, Gangapur, Rajasthan, India",
+    result: "Percentage: 96.00",
+  },
+];
+
+const exams = [
+  { title: "JEE Mains", result: "AIR: 5126" },
+  { title: "JEE Advanced", result: "AIR: 3086" },
+  { title: "KVPY", result: "AIR: 1403" },
+];
+
+const skills = [
+  {
+    title: "Languages",
+    items: [
+      "Java",
+      "Python",
+      "C",
+      "CPP",
+      "Motoko",
+      "Javascript",
+      "Dart",
+      "Scheme",
+      "Assmebly",
+    ],
+  },
+  {
+    title: "Platforms",
+    items: [
+      "Unix",
+      "Git",
+      "Android Studio",
+      "Flutter",
+      "AWS",
+      "Firebase",
+      "Vercel",
+      "Postmam",
+      "Playstore",
+    ],
+  },
+  { title: "Frameworks", items: ["React JS", "Next JS", "Flask", "Node JS"] },
+  {
+    title: "Databases",
+    items: ["MongoDB", "MySql", "SQLAlchemy", "Firestore", "Airtable"],
+  },
+];
+
+const experience = [
+  {
+    title: "Software Engineer Intern",
+    company: "Atlassian",
+    time: "In summer 2023",
+    location: "Remote + Bangalore",
+    points: [],
+    links: [],
+  },
+  {
+    title: "Maths Expert",
+    company: "Chegg Inc.",
+    time: "Nov 2022 - Present",
+    location: "Remote",
+    points: ["Basic maths expert at Chegg Inc.", "Solve math questions daily."],
+    links: [],
+  },
+  {
+    title: "Flutter App Developer",
+    company: "Urban Culture",
+    time: "Apr 2022 - May 2022",
+    location: "Remote",
+    points: [
+      "Leader of website team at Urban Culture.",
+      "Developed Rest APIs.",
+      "Worked on client android app & admin panel in flutter.",
+    ],
+    links: [],
+  },
+  {
+    title: "Web Developer",
+    company: "YouthFest MNIT Jaipur",
+    time: "Dec 2021 - Jan 2022",
+    location: "Remote",
+    points: [
+      "Created a website for MNIT YouthFest 2022",
+      "Leader of team of 6 people",
+      "Frontend in React JS & Backend in Node JS, MongoDB",
+    ],
+    links: ["https://www.mnityouthfest.in/"],
+  },
+  {
+    title: "Web Developer & Incharge",
+    company: "Think India MNIT",
+    time: "Nov 2021 - Oct 2022",
+    location: "Jaipur, IN",
+    points: [
+      "Incharge of Coding team at Think India MNIT.",
+      "We work on different projects like app development, web development.",
+    ],
+    links: [],
+  },
+];
+
+export default { education, exams, skills, experience };
+```
+
+:::danger
+
+- Above data is dummy data which will be produced when you run portfolio-project with `--dummy` option.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
