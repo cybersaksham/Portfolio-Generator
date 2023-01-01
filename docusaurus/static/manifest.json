@@ -7,7 +7,7 @@
   "homepage_url": "https://portfolio-generator.cybersaksham.co.in",
   "name": "Portfolio Generator",
   "description": "Generates a bootstrap based portfolio website for you.",
-  "short_name": "portfolio-generator",
+  "short_name": "Portfolio Generator",
   "theme_color": "#2196f3",
   "background_color": "#424242",
   "display": "standalone",
