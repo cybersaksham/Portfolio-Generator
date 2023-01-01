@@ -3,11 +3,13 @@
   "description": "Generates a bootstrap based portfolio website for you.",
   "website": "https://portfolio-generator.cybersaksham.co.in",
   "author": "cybersaksham",
+  "authorURL": "https://www.cybersaksham.co.in",
   "deploymentBranch": "gh-pages",
   "repository": "portfolio-generator",
   "githubURL": "https://github.com/cybersaksham/Portfolio-Generator",
   "editURL": "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
   "screencastURL": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/screencast.svg",
+  "aboutURL": "/docs/about",
   "docURL": "/docs/installation",
   "metadata": [
     {

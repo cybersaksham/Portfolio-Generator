@@ -154,6 +154,10 @@ const config = {
             items: [
               {
                 label: "Introduction",
+                to: appData.aboutURL,
+              },
+              {
+                label: "Installation",
                 to: appData.docURL,
               },
             ],
@@ -191,7 +195,9 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} ${
           appData.appName
-        }, Inc. Built by ${appData.author}.`,
+        }, Inc. Built by <a href="${appData.authorURL}" target="_blank">${
+          appData.author
+        }</a>.`,
       },
       prism: {
         theme: lightCodeTheme,
