@@ -13,5 +13,16 @@
       "url": "https://portfolio-generator.cybersaksham.co.in/manifest.json"
     }
   ],
-  "icons": []
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 32x27 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "img/icons/500x500.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ]
 }
