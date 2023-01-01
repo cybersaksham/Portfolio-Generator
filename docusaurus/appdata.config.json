@@ -8,5 +8,15 @@
   "githubURL": "https://github.com/cybersaksham/Portfolio-Generator",
   "editURL": "https://github.com/cybersaksham/Portfolio-Generator/tree/master/docusaurus",
   "screencastURL": "https://raw.githubusercontent.com/cybersaksham/Portfolio-Generator/master/screencast.svg",
-  "docURL": "/docs/installation"
+  "docURL": "/docs/installation",
+  "metadata": [
+    {
+      "name": "description",
+      "content": "Generate a bootstrap based portfolio website for ans user. Website will be using Next JS. User can configure generated code according to their needs. User can upload code on GitHub or deploy on Vercel."
+    },
+    {
+      "name": "keywords",
+      "content": "portfolio, generator, portfolio-generator, npm, package, node js, next js, bootstrap, cybersaksham, saksham, bindal, docusaurus,command line, tool"
+    }
+  ]
 }

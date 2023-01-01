@@ -59,6 +59,7 @@ const config = {
         apiKey: "fd5b8be15d9e9c16d13224de912ef83a",
         indexName: "portfolio-generator",
       },
+      metadata: appData.metadata,
       navbar: {
         title: appData.appName,
         logo: {
