@@ -86,7 +86,7 @@ export default function BrowserWindow({
             className="fullscreenimage"
             src={imgSrc}
             onLoad={() => setLoader(false)}
-            style={{ cursor: "pointer", opacity: 0 }}
+            style={{ cursor: "pointer", opacity: 0, height: "100%" }}
             onClick={(e) => {
               openFullscreen(e.target);
             }}

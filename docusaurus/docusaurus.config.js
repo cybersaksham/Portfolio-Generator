@@ -119,7 +119,7 @@ const config = {
     ({
       algolia: {
         appId: "Q65KXJLU8N",
-        apiKey: "fd5b8be15d9e9c16d13224de912ef83a",
+        apiKey: "9624714949be2f59bab0e0a3d0639a17",
         indexName: "portfolio-generator",
       },
       metadata: appData.metadata,
