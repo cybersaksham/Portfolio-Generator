@@ -1,0 +1,17 @@
+{
+  "author": "cybersaksham",
+  "name": "Portfolio Generator",
+  "short_name": "portfolio-generator",
+  "theme_color": "#2196f3",
+  "background_color": "#424242",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./index.html",
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://portfolio-generator.cybersaksham.co.in/manifest.json"
+    }
+  ],
+  "icons": []
+}
