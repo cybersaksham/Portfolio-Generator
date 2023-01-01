@@ -157,7 +157,7 @@ const config = {
                 to: appData.aboutURL,
               },
               {
-                label: "Installation",
+                label: "Get Started",
                 to: appData.docURL,
               },
             ],
@@ -168,6 +168,10 @@ const config = {
               {
                 label: "Stack Overflow",
                 href: `https://stackoverflow.com/questions/tagged/${appData.repository}`,
+              },
+              {
+                label: "Github Discussions",
+                href: `${appData.githubURL}/discussions`,
               },
               // {
               //   label: "Discord",
