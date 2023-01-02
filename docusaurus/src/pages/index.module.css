@@ -21,6 +21,48 @@
   justify-content: center;
 }
 
+.sponsorBtn {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--sponsor-btn-color);
+  border-color: var(--sponsor-btn-color);
+}
+
+.sponsorBtn:hover {
+  background-color: var(--sponsor-btn-color);
+  color: var(--sponsor-btn-hover-color);
+}
+
+.sponsorBtn:hover > svg {
+  fill: var(--sponsor-btn-hover-color);
+}
+
+.sponsorBtn span {
+  margin-left: 8px;
+  vertical-align: text-bottom;
+}
+
+.sponsorBtn svg {
+  transform: scale(1.1);
+  vertical-align: text-bottom;
+  fill: var(--sponsor-btn-color);
+  overflow: visible;
+}
+
+@media screen and (max-width: 550px) {
+  .getStarted {
+    flex-direction: column;
+  }
+  .getStarted a {
+    margin-top: 20px;
+  }
+  .sponsorBtn {
+    margin-left: 0;
+  }
+}
+
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;

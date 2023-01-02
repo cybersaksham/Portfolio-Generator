@@ -10,6 +10,8 @@
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   --ifm-breadcrumb-color-active: var(--ifm-color-primary-darker) !important;
   --ifm-menu-color-active: var(--ifm-color-primary-darker) !important;
+  --sponsor-btn-color: #bf3989;
+  --sponsor-btn-hover-color: #fff;
 }
 
 html[data-theme="dark"] {
@@ -46,6 +48,7 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: hsl(
     var(--site-primary-hue-saturation-light) 73%
   );
+  --sponsor-btn-color: #e9669e;
 }
 
 .header-github-link:hover {
