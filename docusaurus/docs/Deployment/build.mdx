@@ -1,0 +1,51 @@
+---
+id: build
+slug: /deploy/build
+title: Build
+sidebar_label: Build
+---
+
+## Create .env file
+
+:::tip
+This step is optional. Do this only if you want to enable the feature of contact emails from your website.
+:::
+
+Create `.env` file at root level.
+
+Generate OAuth client credentials for an email id at Google Developer Console.
+
+Add these values in that file.
+
+`FRONTEND_URL` is passed to enable cors features. It will allow backend requests only from given frontend.
+
+All these values are necesary in order to enable contact form in website.
+
+Adding this file is optional. If you don't add this file then people will not be able to contact you directly by your website.
+
+```env title=.env
+FRONTEND_URL=<Url where frontend is hosted>
+MAIL_USERNAME=<Your email id>
+MAIL_PASSWORD=<Your email password>
+OAUTH_CLIENTID=<Generated OAuth Client ID>
+OAUTH_CLIENT_SECRET=<Generated OAuth Client Secret>
+OAUTH_REFRESH_TOKEN=<Generated OAuth Refresh Token>
+```
+
+## Build the Website
+
+```bash
+npm run build
+```
+
+- Builds the website for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+- The build is minified and the filenames include the hashes.
+- Your website is ready to be deployed.
+
+## View Production Bundle
+
+```bash
+npm run start
+```
+
+Go to http://localhost:3000

@@ -1,0 +1,97 @@
+---
+id: vercel
+slug: /deploy/vercel
+title: Vercel
+sidebar_label: Vercel
+---
+
+# [Vercel](https://vercel.com/dashboard)
+
+## Step 1: Create Repository {#step1}
+
+Create an account at https://github.com if you don't have one.
+
+Go to https://github.com/new
+
+Enter repository details to create a repository.
+
+## Step 2: Add `vercel.json` {#step2}
+
+:::note
+
+- **The step below is important!**<br/>
+- **If you skip it, your app will not deploy correctly.**
+
+:::
+
+Add this file by the name of `vercel.json` in root directory of your project.
+
+```json title=vercel.json
+{
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "build"
+}
+```
+
+## Step 3: Push code to GitHub {#step3}
+
+Copy link of repository created in [Step 1](#step1)
+
+```bash
+git init
+git remote add <paste link here>
+git add .
+git commit -m "Deployment"
+git push -u origin master
+```
+
+## Step 4: Create Vercel Project {#step4}
+
+Create an account at https://vercel.com/dashboard if you don't have one.
+
+Link your github account to vercel.
+
+Go to https://vercel.com/new
+
+Import the project repository you have created in [Step 1](#step1)
+
+Enter details asked by vercel.
+
+## Step 5: Set Environment Variables {#step5}
+
+:::tip
+This step is optional. Do this only if you want to enable the feature of contact emails from your website.
+:::
+
+Generate OAuth client credentials for an email id at Google Developer Console.
+
+Click `Environment Variables` at vercel create project page.
+
+Set all these environment values by key and value.
+
+| Name                | Value Description                 |
+| ------------------- | --------------------------------- |
+| FRONTEND_URL        | Url where frontend will be hosted |
+| MAIL_USERNAME       | Your email id                     |
+| MAIL_PASSWORD       | Your email password               |
+| OAUTH_CLIENTID      | Generated OAuth Client ID         |
+| OAUTH_CLIENT_SECRET | Generated OAuth Client Secret     |
+| OAUTH_REFRESH_TOKEN | Generated OAuth Refresh Token     |
+
+## Step 6: Deploy{#step6}
+
+Click `Deploy` button
+
+It will start building and deploying the project.
+
+It will redeploy everytime automatically whenever you commit a change to github repository.
+
+## Step 7: Configure Custome Domain {#step7}
+
+Go to vercel dashboard https://vercel.com/dashboard
+
+Click on your project name.
+
+Click `view domains` on project description page.
+
+Add your domain and create `CNAME` field at your DNS provider as instructed by vercel.

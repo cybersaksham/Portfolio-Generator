@@ -25,6 +25,11 @@
       "Gallery/gallery-resume",
       "Gallery/gallery-portfolio",
       "Gallery/gallery-contact"
+    ],
+    "Deployment": [
+      "Deployment/build",
+      "Deployment/github-pages",
+      "Deployment/vercel"
     ]
   }
 }

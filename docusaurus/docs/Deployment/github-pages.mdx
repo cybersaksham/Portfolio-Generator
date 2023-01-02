@@ -1,0 +1,105 @@
+---
+id: github-pages
+slug: /deploy/github-pages
+title: Github Pages
+sidebar_label: Github Pages
+---
+
+# [GitHub Pages](https://pages.github.com/)
+
+## Step 1: Create Repository {#step1}
+
+Create an account at https://github.com if you don't have one.
+
+Go to https://github.com/new
+
+Enter repository details to create a repository.
+
+## Step 2: Add `homepage` to `package.json` {#step2}
+
+:::note
+
+- **The step below is important!**<br/>
+- **If you skip it, your app will not deploy correctly.**
+
+:::
+
+Open your `package.json` and add a `homepage` field for your project:
+
+```json
+  "homepage": "https://myusername.github.io/my-app",
+```
+
+or for a GitHub user page:
+
+```json
+  "homepage": "https://myusername.github.io",
+```
+
+or for a custom domain page:
+
+```json
+  "homepage": "https://mywebsite.com",
+```
+
+## Step 3: Install `gh-pages` and add `deploy` to `scripts` in `package.json` {#step3}
+
+Now, whenever you run `npm run build`, you will see a cheat sheet with instructions on how to deploy to GitHub Pages.
+
+```bash
+npm install --save gh-pages
+```
+
+Add the following scripts in your `package.json`:
+
+```diff
+  "scripts": {
++   "predeploy": "npm run build",
++   "deploy": "gh-pages -d build",
+    "dev": "next dev",
+    "build": "next build",
+```
+
+:::note
+The `predeploy` script will run automatically before `deploy` is run.
+:::
+
+## Step 4: Push code to GitHub {#step4}
+
+Copy link of repository created in [Step 1](#step1)
+
+```bash
+git init
+git remote add <paste link here>
+git add .
+git commit -m "Deployment"
+git push -u origin master
+```
+
+## Step 5: Deploy the site
+
+Then run:
+
+```bash
+npm run deploy
+```
+
+## Step 6: For a project page, ensure your project's settings use `gh-pages`
+
+Finally, make sure **GitHub Pages** option in your GitHub project settings is set to use the `gh-pages` branch:
+
+<img
+  src="https://i.imgur.com/HUjEr9l.png"
+  width="500"
+  alt="gh-pages branch setting"
+/>
+
+## Step 7: Optionally, configure the domain
+
+You can configure a custom domain with GitHub Pages by adding a `CNAME` file to the `public/` folder.
+
+Your CNAME file should look like this:
+
+```
+mywebsite.com
+```
