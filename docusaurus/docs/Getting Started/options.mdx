@@ -1,0 +1,80 @@
+---
+id: options
+slug: /options
+title: Available Options
+sidebar_label: Available Options
+---
+
+You have following options to run with `npx portfolio-generator`:
+
+## `<project-directory>`
+
+- It is a mendatory argument you need to provide in order to generate portfolio website.
+- This argument must be replaced by a directory name where you want to generate the code.
+- Directory must not be present or must be empty before creating the package.
+- Directory name must match naming conventions according to npm package https://www.npmjs.com/package/validate-npm-package-name
+- If you don't provide this argument then you get the following error:
+
+<p>
+  <img
+    src={require("../assets/options/directory_not_given.png").default}
+    alt="direcotry not provided"
+  />
+</p>
+
+- If directory is not empty or have some conflict files in it then you get the following error:
+
+<p>
+  <img
+    src={require("../assets/options/directory_conflict.png").default}
+    alt="direcotry conflicted"
+  />
+</p>
+
+## `--version` or `-V`
+
+- By running `npx portfolio-generator --version` you can see the current installed version of `portfolio-generator` in your system.
+
+<p>
+  <img src={require("../assets/options/version.png").default} alt="--version" />
+</p>
+
+## `--dummy`
+
+- If you run the package with dummy option `npx portfolio-generator <project-directory> --dummy` then a dummy portfolio website is generated which is based on the personal data of Saksham Bindal.
+- You can view that dummy website here https://portfolio-generator-dummy.cybersaksham.co.in/
+
+:::danger
+
+- `--dummy` options produces a dummy data.
+- This data is the personal data of [Saksham Bindal](https://www.cybersaksham.co.in)
+- This data is only for testing purpose. You are not allowed to misuse the data.
+- You are not allowed to distribute or publish this data.
+
+:::
+
+## `--info`
+
+- By running `npx portfolio-generator --info` you can see the environment information where package will run.
+- You might want to take a look at the result before using the package.
+
+<p>
+  <img src={require("../assets/options/info.png").default} alt="--info" />
+</p>
+
+## `--scripts-version`
+
+- If you run the package `npx portfolio-generator <project-directory> --scripts-version <alternative-package>` then package uses different scripts version to generate the portfolio.
+
+:::info
+This option is currently not working in `portfolio-generator`.
+:::
+
+## `--help` or `-h`
+
+- By running `npx portfolio-generator --help` you can see all available options.
+- You might want to take a look at the result before using the package.
+
+<p>
+  <img src={require("../assets/options/help.png").default} alt="--help" />
+</p>

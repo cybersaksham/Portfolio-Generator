@@ -3,6 +3,7 @@
     "Welcome": ["Welcome/intro", "Welcome/about"],
     "Getting Started": [
       "Getting Started/installation",
+      "Getting Started/options",
       "Getting Started/folder-structure",
       "Getting Started/scripts"
     ],
