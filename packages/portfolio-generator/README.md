@@ -14,6 +14,7 @@
 - You can download final generated code & deploy on vercel.
 - View the template of generated website here https://bootstrapmade.com/demo/Personal/
 - View my website which is also built in same template https://www.cybersaksham.co.in/
+- View the full documentation of `portfolio-generator` here http://portfolio-generator.cybersaksham.co.in/
 
 # Folder Structure
 

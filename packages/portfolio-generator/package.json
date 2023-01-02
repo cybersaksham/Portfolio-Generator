@@ -1,6 +1,6 @@
 {
   "name": "portfolio-generator",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "author": "cybersaksham",
   "license": "MIT",
   "description": "This package generates a bootstrap based portfolio website for you.",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/cybersaksham/Portfolio-Generator/issues"
   },
-  "homepage": "https://github.com/cybersaksham/Portfolio-Generator#readme",
+  "homepage": "http://portfolio-generator.cybersaksham.co.in/",
   "bin": {
     "portfolio-generator": "./index.js"
   },
