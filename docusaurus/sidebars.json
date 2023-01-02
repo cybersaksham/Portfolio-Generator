@@ -27,6 +27,7 @@
       "Gallery/gallery-contact"
     ],
     "Deployment": [
+      "Deployment/deploy",
       "Deployment/build",
       "Deployment/github-pages",
       "Deployment/vercel"
