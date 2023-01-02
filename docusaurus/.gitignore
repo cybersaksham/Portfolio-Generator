@@ -10,7 +10,6 @@
 
 # Algolia
 .env
-algolia.config.json
 
 # Misc
 .DS_Store
