@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import portfolio from "../Data/Portfolio";
+import ValidImage from "./ValidImage";
 
 const Detail = ({ id }) => {
   const [project, setProject] = useState(null);
@@ -11,10 +12,7 @@ const Detail = ({ id }) => {
 
   return (
     <div id="portfolio-details" className="portfolio-details">
-      <div
-        className="container"
-        // style={{ border: "2px solid white", borderRadius: "10px" }}
-      >
+      <div className="container">
         {project && (
           <div className="row">
             <div className="col-lg-8">
@@ -22,8 +20,9 @@ const Detail = ({ id }) => {
                 <div className="swiper-wrapper align-items-center">
                   {Array.from(Array(project.slides).keys()).map((i) => (
                     <div className="swiper-slide" key={i}>
-                      <img
+                      <ValidImage
                         src={`/Gallery/Projects/${project.img}/${i}.webp`}
+                        fallbackSrc="/Gallery/404.webp"
                         alt=""
                         style={{
                           height: "550px",

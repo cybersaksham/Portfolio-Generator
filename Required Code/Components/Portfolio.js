@@ -1,8 +1,14 @@
+import { useEffect, useState } from "react";
 import portfolio from "../Data/Portfolio";
 import ValidImage from "./ValidImage";
 
 const Portfolio = () => {
   const { filters, projects } = portfolio;
+  const [imageUrls, setImageUrls] = useState(projects.map((pr) => true));
+
+  useEffect(() => {
+    console.log(imageUrls);
+  }, [imageUrls]);
 
   return (
     <section id="portfolio" className="portfolio">
@@ -33,6 +39,9 @@ const Portfolio = () => {
             >
               <div className="portfolio-wrap">
                 <ValidImage
+                  imageUrls={imageUrls}
+                  setImageUrls={setImageUrls}
+                  urlIndex={i}
                   className="img-fluid"
                   alt=""
                   style={{
@@ -53,14 +62,17 @@ const Portfolio = () => {
                     {project.name}
                   </span>
                   <div className="portfolio-links">
-                    <a
-                      href={`/Gallery/Projects/${project.img}/0.webp`}
-                      data-gallery="portfolioGallery"
-                      className="portfolio-lightbox"
-                      title={project.name}
-                    >
-                      <i className="bx bx-plus" />
-                    </a>
+                    {imageUrls[i] && (
+                      <a
+                        href={`/Gallery/Projects/${project.img}/0.webp`}
+                        data-gallery="portfolioGallery"
+                        className="portfolio-lightbox"
+                        title={project.name}
+                        target={imageUrls[i] ? "_self" : "_blank"}
+                      >
+                        <i className="bx bx-plus" />
+                      </a>
+                    )}
                     <a
                       href={`/detail/${i}`}
                       data-gallery="portfolioDetailsGallery"
