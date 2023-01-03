@@ -1,41 +1,43 @@
-# Website
+# portfolio-generator
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![Size][size-image]][npm-url] [![License][license-image]][npm-url]
 
-### Installation
+[npm-url]: https://www.npmjs.com/package/portfolio-generator
+[downloads-image]: http://img.shields.io/npm/dm/portfolio-generator.svg?style=for-the-badge
+[npm-image]: http://img.shields.io/npm/v/portfolio-generator.svg?style=for-the-badge
+[size-image]: http://img.shields.io/bundlephobia/min/portfolio-generator.svg?style=for-the-badge
+[license-image]: http://img.shields.io/npm/l/portfolio-generator.svg?style=for-the-badge
 
-```
-$ yarn
-```
+This is the documetation website for `portfolio-generator` hosted at http://portfolio-generator.cybersaksham.co.in/
 
-### Local Development
+- This package generates a bootstrap based portfolio website for you.
+- Website will be using Next JS.
+- You can download final generated code & deploy on vercel.
+- View the template of generated website here https://bootstrapmade.com/demo/Personal/
+- View my website which is also built in same template https://www.cybersaksham.co.in/
+- View the full documentation of `portfolio-generator` here http://portfolio-generator.cybersaksham.co.in/
 
-```
-$ yarn start
-```
+## Run Portfolio Generator
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```bash
+npx portfolio-generator my-portfolio
 ```
 
-Not using SSH:
+## Run the Website
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
+```bash
+cd portfolio-generator
+npm run dev
+# Go to http://localhost:3000
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## In Future
+
+These features may be added in future.
+
+- Service section
+- Different templates
+- Other custom features
+
+If you have any feature that may be added to the website then you can fork the repository, add that feature & create a pull request.
